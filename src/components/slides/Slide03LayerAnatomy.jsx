@@ -83,7 +83,7 @@ export default function Slide03LayerAnatomy() {
           >
             <User size={14} color="#FF5500" />
             <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              PRESENTER 03 — PRODUCT DESIGN & 3D LAYER ANATOMY
+              SLIDE 03 / PRESENTER 3 — PRODUCT INFO & 3D LAYER ANATOMY
             </span>
           </div>
 
@@ -104,10 +104,10 @@ export default function Slide03LayerAnatomy() {
           }}
         >
           <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', fontWeight: 700 }}>
-            SLIDE 03 OF 08
+            SLIDE 03 OF 07
           </div>
           <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
-            3D Layer Diagram
+            3D Layer Details
           </div>
         </div>
       </div>
@@ -263,7 +263,7 @@ export default function Slide03LayerAnatomy() {
 
       {/* Bottom Speaker Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        PRESENTER 3: HOVER OR CLICK ON ANY LAYER BUTTON TO EXPLAIN ITS FUNCTION TO PROFESSOR.
+        PRESENTER 3: EXPLAIN THE 3D LAYER PICTURE AND COMPOSITE HARDWARE MATERIALS TO PROFESSOR.
       </div>
     </div>
   );

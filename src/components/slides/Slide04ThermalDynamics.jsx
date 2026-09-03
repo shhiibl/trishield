@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Cpu, ShieldAlert, Thermometer, User } from 'lucide-react';
+import { User, Feather, Ruler, RotateCw, CheckCircle, Shield } from 'lucide-react';
 
 export default function Slide04ThermalDynamics() {
   return (
@@ -17,7 +17,7 @@ export default function Slide04ThermalDynamics() {
     >
       {/* Header with Speaker Badge */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div style={{ maxWidth: '660px' }}>
+        <div style={{ maxWidth: '680px' }}>
           <div
             className="glass-panel"
             style={{
@@ -33,15 +33,15 @@ export default function Slide04ThermalDynamics() {
           >
             <User size={14} color="#FF5500" />
             <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              PRESENTER 04 — THERMAL COOLING & HEAT MANAGEMENT
+              SLIDE 04 / PRESENTER 4 — ULTRA-SLIM 1.2mm PROFILE & 3D REVOLUTION
             </span>
           </div>
 
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
-            Dual-path thermal cooling.
+            "Is the case bulky?" — No. Only 1.2mm Thin!
           </h1>
           <p style={{ marginTop: '6px', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.45 }}>
-            Thank you Presenter 3. Professor, our case manages heat in two smart ways: drawing heat out from inside the phone while blocking sun heat from outside.
+            Thank you Presenter 3. Professor, many people assume a liquid-cooled 5-layer case will be heavy or bulky. As you can see in our live revolving 3D model, TRI—SHIELD maintains an ultra-slim 1.2mm profile.
           </p>
         </div>
 
@@ -57,99 +57,103 @@ export default function Slide04ThermalDynamics() {
           }}
         >
           <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', fontWeight: 700 }}>
-            SLIDE 04 OF 08
+            SLIDE 04 OF 07
           </div>
           <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
-            –12°C Temp Drop
+            1.2mm Ultra-Slim
           </div>
-          <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', marginTop: '2px' }}>
-            CPU Junction Delta
+          <div style={{ fontSize: '0.7rem', color: '#0088FF', marginTop: '2px' }}>
+            360° Revolving 3D View
           </div>
         </div>
       </div>
 
-      {/* Main Dual-Path Comparison Cards Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', margin: 'auto 0', pointerEvents: 'auto' }}>
+      {/* Side HUD Cards with Revolving 3D Canvas in Center Background */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: 'auto 0', pointerEvents: 'auto' }}>
         
-        {/* Pathway A: Internal Heat Spreading */}
-        <div className="glass-panel-interactive" style={{ padding: '26px', background: 'rgba(12, 14, 20, 0.85)', borderColor: 'rgba(255, 85, 0, 0.25)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Cpu size={20} color="#FF5500" />
+        {/* Left Specification Card */}
+        <div
+          className="glass-panel"
+          style={{
+            width: '320px',
+            padding: '24px',
+            background: 'rgba(12, 14, 20, 0.88)',
+            borderColor: 'rgba(255, 85, 0, 0.3)'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+            <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Ruler size={20} color="#FF5500" />
+            </div>
+            <div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
+                Actual Dimensions
               </div>
-              <div>
-                <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
-                  Path 1: Internal CPU Cooling
-                </div>
-                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500' }}>
-                  GRAPHITE HEAT SPREADER
-                </div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500' }}>
+                FEATHERWEIGHT ENGINEERING
               </div>
             </div>
-            <span style={{ fontSize: '0.68rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(255,85,0,0.15)', color: '#FF5500', fontWeight: 700 }}>
-              SINK INTERNAL HEAT
-            </span>
           </div>
 
-          <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
-            When playing games or processing heavy apps, the internal processor gets hot. The synthetic graphite sheet pulls heat off the processor and spreads it across the outer frame so the phone never slows down.
-          </p>
-
-          <div style={{ display: 'flex', gap: '12px' }}>
-            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>HEAT SPREAD RATE</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>1,500 W/m·K</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ padding: '10px 14px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
+              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>TOTAL CASE THICKNESS</div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.4rem', fontWeight: 800, color: '#FF5500' }}>1.2 mm</div>
             </div>
-            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>RESULT</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FF5500' }}>Zero Lag / Throttling</div>
+
+            <div style={{ padding: '10px 14px', borderRadius: '8px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>LIQUID CHAMBER THICKNESS</div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF' }}>0.4 mm</div>
+            </div>
+
+            <div style={{ padding: '10px 14px', borderRadius: '8px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>TOTAL WEIGHT</div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF' }}>34 Grams</div>
             </div>
           </div>
         </div>
 
-        {/* Pathway B: External Sun Radiation Insulation */}
-        <div className="glass-panel-interactive" style={{ padding: '26px', background: 'rgba(12, 14, 20, 0.85)', borderColor: 'rgba(0, 136, 255, 0.25)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(0,136,255,0.15)', border: '1px solid rgba(0,136,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <ShieldAlert size={20} color="#0088FF" />
+        {/* Right Revolving 3D Feature Indicator */}
+        <div
+          className="glass-panel"
+          style={{
+            width: '320px',
+            padding: '24px',
+            background: 'rgba(12, 14, 20, 0.88)',
+            borderColor: 'rgba(0, 136, 255, 0.3)'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+            <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(0,136,255,0.15)', border: '1px solid rgba(0,136,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <RotateCw size={20} color="#0088FF" />
+            </div>
+            <div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
+                360° Revolving 3D
               </div>
-              <div>
-                <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
-                  Path 2: Sunlight Heat Shield
-                </div>
-                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#0088FF' }}>
-                  SEALED LIQUID CORE BUFFER
-                </div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#0088FF' }}>
+                INSPECT ALL ANGLES
               </div>
             </div>
-            <span style={{ fontSize: '0.68rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(0,136,255,0.15)', color: '#0088FF', fontWeight: 700 }}>
-              BLOCK SUNLIGHT HEAT
-            </span>
           </div>
 
-          <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
-            When left outside in direct sunlight, standard phones overheat quickly. The liquid fluid layer acts as a heat buffer, absorbing solar energy before it can warm up the phone battery.
+          <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '14px' }}>
+            Observe the 3D model rotating in real time. The precision micro-fluid channels fit seamlessly without making your pocket feel heavy or bulky.
           </p>
 
-          <div style={{ display: 'flex', gap: '12px' }}>
-            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(0,136,255,0.08)', border: '1px solid rgba(0,136,255,0.2)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>SUN HEAT TOLERANCE</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>Up to +55°C</div>
-            </div>
-            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(0,136,255,0.08)', border: '1px solid rgba(0,136,255,0.2)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>LIQUID TYPE</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#0088FF' }}>Non-Conductive Fluid</div>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 12px', borderRadius: '8px', background: 'rgba(0,136,255,0.1)', border: '1px solid rgba(0,136,255,0.25)' }}>
+            <CheckCircle size={14} color="#0088FF" />
+            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: '#FFFFFF', fontWeight: 700 }}>
+              FITS EASILY IN JEANS & POCKETS
+            </span>
           </div>
         </div>
 
       </div>
 
-      {/* Bottom Speaker Hint */}
+      {/* Speaker Footer Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        PRESENTER 4: EXPLAIN HOW GRAPHITE HANDLES INTERNAL CPU HEAT & LIQUID CORE BLOCKS OUTDOOR SUN HEAT.
+        PRESENTER 4: POINT TO THE REVOLVING 3D MODEL & PROVE TO PROFESSOR THAT THE CASE IS ULTRA-SLIM (1.2mm).
       </div>
     </div>
   );

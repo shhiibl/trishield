@@ -345,18 +345,18 @@ export default function PhoneStage3D() {
         targ.exploded = 1.0;
         break;
 
-      case 3: // 04 / THERMAL DYNAMICS (Focus on Graphite & Fluid Buffer Layer)
+      case 3: // 04 / ULTRA-SLIM 3D PROFILE (Continuous Rotate & Revolve)
         targ.rotX = 0.15;
-        targ.rotY = Math.PI + 0.35;
-        targ.rotZ = 0;
-        targ.posX = -1.0;
+        targ.rotY += 0.012; // Continuous revolution
+        targ.rotZ = 0.02;
+        targ.posX = 0;
         targ.posY = 0;
-        targ.posZ = 0.1;
-        targ.scale = 0.92;
-        targ.exploded = 0.2;
+        targ.posZ = 0.2;
+        targ.scale = 1.05;
+        targ.exploded = 0;
         break;
 
-      case 4: // 05 / IMPACT & HYDRO-SEAL (Focus on Honeycomb & Gasket)
+      case 4: // 05 / USES & APPLICATIONS
         targ.rotX = -0.18;
         targ.rotY = Math.PI - 0.2;
         targ.rotZ = 0;
@@ -364,10 +364,10 @@ export default function PhoneStage3D() {
         targ.posY = 0;
         targ.posZ = 0.1;
         targ.scale = 0.92;
-        targ.exploded = 0.35;
+        targ.exploded = 0;
         break;
 
-      case 5: // 06 / APPLICATION
+      case 5: // 06 / PROFIT CALCULATOR
         targ.rotX = 0.05;
         targ.rotY = Math.PI + 0.2;
         targ.rotZ = 0;
@@ -378,7 +378,7 @@ export default function PhoneStage3D() {
         targ.exploded = 0;
         break;
 
-      case 6: // 07 / FINANCIAL MODEL
+      case 6: // 07 / CONCLUSION
         targ.rotX = 0.05;
         targ.rotY = Math.PI - 0.25;
         targ.rotZ = 0;
@@ -389,23 +389,13 @@ export default function PhoneStage3D() {
         targ.exploded = 0;
         break;
 
-      case 7: // 08 / THE REVEAL & CTA
-        targ.rotX = 0;
-        targ.rotY = Math.PI;
-        targ.rotZ = 0;
-        targ.posX = 0;
-        targ.posY = 0.1;
-        targ.posZ = 0.4;
-        targ.scale = 1.05;
-        targ.exploded = 0;
-        break;
-
       default:
         break;
     }
   }, [currentSlide, activeFeature]);
 
-  if (currentSlide !== 2) return null;
+  // Mount 3D canvas on Slide 3 (Layer Anatomy) and Slide 4 (Ultra-Slim 3D View)
+  if (currentSlide !== 2 && currentSlide !== 3) return null;
 
   return (
     <div

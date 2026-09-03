@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { PieChart, TrendingUp, Sliders, DollarSign, ShieldCheck, Zap, Layers, User } from 'lucide-react';
+import React from 'react';
+import { Shield, Sparkles, CheckCircle2, ArrowRight, User } from 'lucide-react';
+import { usePresentation } from '../../context/PresentationContext';
 
 export default function Slide07BusinessModel() {
-  const [units, setUnits] = useState(25000);
-  const [price, setPrice] = useState(1699);
+  const { goToSlide } = usePresentation();
 
-  // Financial Constants
-  const bomCostPerUnit = 580; // ₹580 per unit total manufacturing BOM
-  const totalRevenue = units * price;
-  const totalBOMCost = units * bomCostPerUnit;
-  const grossProfit = totalRevenue - totalBOMCost;
-  const marginPercent = ((price - bomCostPerUnit) / price) * 100;
-
-  const presetUnits = [5000, 25000, 50000, 100000, 250000, 500000];
-
-  const formatCurrency = (val) => {
-    if (val >= 10000000) {
-      return `₹${(val / 10000000).toFixed(2)} Cr`;
-    }
-    if (val >= 100000) {
-      return `₹${(val / 100000).toFixed(2)} Lakh`;
-    }
-    return `₹${val.toLocaleString('en-IN')}`;
-  };
+  const summaryHighlights = [
+    { label: 'Thermal Core', val: 'Dielectric Liquid' },
+    { label: 'Heat Spreader', val: 'Synthetic Graphite' },
+    { label: 'Drop Rating', val: '3.5m Impact Grid' },
+    { label: 'Profile Width', val: '1.2mm Ultra-Slim' }
+  ];
 
   return (
     <div
@@ -33,275 +20,112 @@ export default function Slide07BusinessModel() {
         padding: '90px 60px 40px 60px',
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
         justifyContent: 'space-between',
+        textAlign: 'center',
         pointerEvents: 'none',
         zIndex: 10
       }}
     >
-      {/* Header with Speaker Badge */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div style={{ maxWidth: '640px' }}>
-          <div
-            className="glass-panel"
-            style={{
-              marginBottom: '10px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(255, 85, 0, 0.12)',
-              borderColor: 'rgba(255, 85, 0, 0.3)',
-              pointerEvents: 'auto'
-            }}
-          >
-            <User size={14} color="#FF5500" />
-            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              PRESENTER 07 — FINANCIAL MODEL & UNIT PROFIT METRICS
-            </span>
-          </div>
-
-          <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
-            Interactive Profit Calculator.
-          </h1>
-          <p style={{ marginTop: '4px', color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: 1.4 }}>
-            Thank you Presenter 6. Professor, I will demonstrate our unit economics. Drag the slider to project total sales volume and see live net profit!
-          </p>
-        </div>
-
-        {/* Speaker Card */}
+      {/* Speaker Badge & Title */}
+      <div style={{ maxWidth: '680px' }}>
         <div
           className="glass-panel"
           style={{
-            padding: '12px 18px',
-            textAlign: 'right',
-            background: 'rgba(12, 14, 20, 0.9)',
+            marginBottom: '10px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '6px 14px',
+            background: 'rgba(255, 85, 0, 0.12)',
             borderColor: 'rgba(255, 85, 0, 0.3)',
             pointerEvents: 'auto'
           }}
         >
-          <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', fontWeight: 700 }}>
-            SLIDE 07 OF 08
-          </div>
-          <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
-            Unit Economics
-          </div>
+          <User size={14} color="#FF5500" />
+          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
+            SLIDE 07 / PRESENTER 7 — CONCLUSION & SUMMARY
+          </span>
         </div>
+
+        <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.05 }}>
+          TRI—SHIELD
+        </h1>
+
+        <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
+          Thank you Professor. In conclusion, <strong>TRI—SHIELD</strong> combines liquid thermal cooling, drop impact absorption, and water sealing into an ultra-thin 1.2mm case.
+        </p>
       </div>
 
-      {/* Main Drag Meter & Financial Breakdown Grid */}
+      {/* Summary Specs Cards */}
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '1.2fr 0.8fr',
-          gap: '24px',
-          margin: 'auto 0',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '16px',
+          width: '85%',
+          maxWidth: '880px',
           pointerEvents: 'auto'
         }}
       >
-        {/* Left Side: Drag Meter Interactive Card */}
-        <div
-          className="glass-panel"
-          style={{
-            padding: '24px',
-            background: 'rgba(12, 14, 20, 0.9)',
-            borderColor: 'rgba(255, 85, 0, 0.3)',
-            boxShadow: '0 0 30px rgba(255, 85, 0, 0.15)'
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Sliders size={18} color="#FF5500" />
-              </div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.85rem', fontWeight: 700, color: '#FFFFFF' }}>
-                PROFIT SIMULATION METER
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 10px', borderRadius: '12px', background: 'rgba(255,85,0,0.12)', border: '1px solid rgba(255,85,0,0.3)' }}>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500', fontWeight: 700 }}>
-                LIVE PROFESSOR DEMO
-              </span>
-            </div>
-          </div>
-
-          {/* Volume Drag Meter Slider */}
-          <div style={{ marginBottom: '20px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
-                UNITS SOLD (SALES VOLUME)
-              </span>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.2rem', fontWeight: 800, color: '#FF5500' }}>
-                {units.toLocaleString('en-IN')} <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>Units</span>
-              </span>
-            </div>
-
-            <input
-              type="range"
-              min="1000"
-              max="500000"
-              step="1000"
-              value={units}
-              onChange={(e) => setUnits(Number(e.target.value))}
-              className="luxury-drag-slider"
-              style={{ width: '100%' }}
-            />
-
-            {/* Quick Preset Buttons */}
-            <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
-              {presetUnits.map((preset) => (
-                <button
-                  key={preset}
-                  onClick={() => setUnits(preset)}
-                  style={{
-                    flex: 1,
-                    padding: '6px 0',
-                    borderRadius: '6px',
-                    border: units === preset ? '1px solid #FF5500' : '1px solid rgba(255, 255, 255, 0.08)',
-                    background: units === preset ? '#FF5500' : 'rgba(255, 255, 255, 0.04)',
-                    color: units === preset ? '#FFFFFF' : 'var(--text-secondary)',
-                    fontFamily: "'Space Grotesk', monospace",
-                    fontSize: '0.68rem',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                    transition: 'all 200ms ease'
-                  }}
-                >
-                  {preset >= 100000 ? `${preset / 100000}L` : `${preset / 1000}K`}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* MSRP Unit Price Drag Slider */}
-          <div style={{ marginBottom: '22px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
-                RETAIL PRICE PER UNIT (MSRP)
-              </span>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.1rem', fontWeight: 800, color: '#FFFFFF' }}>
-                ₹{price.toLocaleString('en-IN')} <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>/ unit</span>
-              </span>
-            </div>
-
-            <input
-              type="range"
-              min="1200"
-              max="3000"
-              step="50"
-              value={price}
-              onChange={(e) => setPrice(Number(e.target.value))}
-              className="luxury-drag-slider"
-              style={{ width: '100%' }}
-            />
-          </div>
-
-          {/* Financial Calculation Cards Row */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
-            <div style={{ padding: '12px', borderRadius: '10px', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)', letterSpacing: '0.05em' }}>GROSS REVENUE</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
-                {formatCurrency(totalRevenue)}
-              </div>
-            </div>
-
-            <div style={{ padding: '12px', borderRadius: '10px', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)', letterSpacing: '0.05em' }}>MFG COST (₹580/U)</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-secondary)', marginTop: '2px' }}>
-                {formatCurrency(totalBOMCost)}
-              </div>
-            </div>
-
-            <div style={{ padding: '12px', borderRadius: '10px', background: 'rgba(255, 85, 0, 0.15)', border: '1px solid rgba(255, 85, 0, 0.4)' }}>
-              <div style={{ fontSize: '0.62rem', color: '#FF5500', letterSpacing: '0.05em', fontWeight: 700 }}>PROJECTED NET PROFIT</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.15rem', fontWeight: 800, color: '#FF5500', marginTop: '2px' }}>
-                {formatCurrency(grossProfit)}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side: Per-Unit Margin & BOM Breakdown */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          
-          {/* Per-Unit Margin Card */}
+        {summaryHighlights.map((item, idx) => (
           <div
+            key={idx}
             className="glass-panel"
             style={{
-              padding: '20px',
+              padding: '16px',
               background: 'rgba(12, 14, 20, 0.85)',
-              borderColor: 'rgba(0, 136, 255, 0.3)'
+              borderColor: 'rgba(255, 85, 0, 0.25)'
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)', letterSpacing: '0.08em' }}>
-                PER-UNIT PROFIT YIELD
-              </span>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#0088FF', fontWeight: 700, padding: '2px 8px', borderRadius: '4px', background: 'rgba(0,136,255,0.15)' }}>
-                {marginPercent.toFixed(1)}% MARGIN
-              </span>
+            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: 'var(--text-dim)', marginBottom: '4px' }}>
+              {item.label}
             </div>
-
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.8rem', fontWeight: 800, color: '#0088FF' }}>
-                ₹{(price - bomCostPerUnit).toLocaleString('en-IN')}
-              </span>
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>net yield / unit</span>
+            <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#FFFFFF' }}>
+              {item.val}
             </div>
           </div>
-
-          {/* BOM Manufacturing Cost Breakdown */}
-          <div
-            className="glass-panel"
-            style={{
-              flex: 1,
-              padding: '18px 20px',
-              background: 'rgba(12, 14, 20, 0.85)',
-              borderColor: 'rgba(255, 255, 255, 0.08)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-              <PieChart size={16} color="#FF5500" />
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: '#FFFFFF', fontWeight: 700 }}>
-                BOM COST STRUCTURE (AVG ₹580)
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              {[
-                { name: 'PC / TPU Outer Armor Shell', cost: '₹120' },
-                { name: 'Dielectric Liquid Chamber', cost: '₹135' },
-                { name: 'Elastomer Impact Matrix', cost: '₹95' },
-                { name: 'Graphite Thermal Spreader', cost: '₹105' },
-                { name: 'Precision Seal & Gasket Assembly', cost: '₹125' }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    display: 'flex',
-                    justify: 'space-between',
-                    alignItems: 'center',
-                    padding: '6px 10px',
-                    borderRadius: '6px',
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    fontSize: '0.78rem'
-                  }}
-                >
-                  <span style={{ color: 'var(--text-secondary)' }}>{item.name}</span>
-                  <span style={{ fontFamily: "'Space Grotesk', monospace", color: '#FF5500', fontWeight: 700 }}>{item.cost}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
+        ))}
       </div>
 
-      {/* Speaker Footer Hint */}
-      <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        PRESENTER 7: DEMONSTRATE THE DRAG SLIDER TO PROFESSOR TO SHOW HOW PROFIT GROWS WITH VOLUME.
+      {/* Re-visit 3D Layer Anatomy CTA & Completion Badge */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px', pointerEvents: 'auto' }}>
+        <button
+          onClick={() => goToSlide(2)}
+          style={{
+            padding: '12px 28px',
+            borderRadius: '30px',
+            background: 'linear-gradient(135deg, #FF5500 0%, #CC4400 100%)',
+            border: 'none',
+            color: '#FFFFFF',
+            fontFamily: "'Space Grotesk', monospace",
+            fontSize: '0.82rem',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            boxShadow: '0 0 25px rgba(255, 85, 0, 0.5)',
+            transition: 'transform 200ms ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.05)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
+        >
+          <span>RE-VISIT 3D LAYER ANATOMY</span>
+          <ArrowRight size={16} />
+        </button>
+
+        <div className="glass-panel" style={{ padding: '6px 18px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <CheckCircle2 size={14} color="#0088FF" />
+          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
+            PRESENTATION COMPLETE — READY FOR PROFESSOR QUESTIONS
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -12,7 +12,6 @@ import Slide04ThermalDynamics from './slides/Slide04ThermalDynamics';
 import Slide05ImpactHydroSeal from './slides/Slide05ImpactHydroSeal';
 import Slide06UseCases from './slides/Slide06UseCases';
 import Slide07BusinessModel from './slides/Slide07BusinessModel';
-import Slide08FinalHero from './slides/Slide08FinalHero';
 
 export default function PresentationContainer() {
   const { currentSlide, openingDone } = usePresentation();
@@ -24,8 +23,7 @@ export default function PresentationContainer() {
     <Slide04ThermalDynamics key="slide-4" />,
     <Slide05ImpactHydroSeal key="slide-5" />,
     <Slide06UseCases key="slide-6" />,
-    <Slide07BusinessModel key="slide-7" />,
-    <Slide08FinalHero key="slide-8" />
+    <Slide07BusinessModel key="slide-7" />
   ];
 
   return (

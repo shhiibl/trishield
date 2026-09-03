@@ -1,7 +1,42 @@
 import React from 'react';
-import { ShieldCheck, Droplets, Activity, Shield, User } from 'lucide-react';
+import { Gamepad2, Compass, Plane, HardHat, User } from 'lucide-react';
 
 export default function Slide05ImpactHydroSeal() {
+  const uses = [
+    {
+      title: '1. Mobile Gamers',
+      subtitle: 'PREVENT CPU OVERHEATING',
+      desc: 'Keeps smartphone processors cool during intensive BGMI / COD sessions so frame rates stay locked at 60-120 FPS without lag.',
+      icon: Gamepad2,
+      stat: '–12°C Temp Drop',
+      color: '#FF5500'
+    },
+    {
+      title: '2. Outdoor Trekkers',
+      tagline: 'RAIN & MOUNTAIN DROPS',
+      desc: 'Rubber hydro-gasket blocks mountain rain and dust while honeycomb cells protect phone glass against granite rock falls.',
+      icon: Compass,
+      stat: 'IP68 & 3.5m Drops',
+      color: '#0088FF'
+    },
+    {
+      title: '3. Global Travelers',
+      tagline: 'HOT & COLD CLIMATES',
+      desc: 'Insulates battery cells from extreme sun heat (+45°C) and freezing winter cold (–20°C) during international travel.',
+      icon: Plane,
+      stat: 'Temp Insulation',
+      color: '#FFAA00'
+    },
+    {
+      title: '4. Field & Site Workers',
+      tagline: 'CONSTRUCTION & ONSITE',
+      desc: 'Deflects heavy concrete drops, machinery vibrations, and fine construction dust away from internal ports.',
+      icon: HardHat,
+      stat: 'Heavy Impact Shield',
+      color: '#FF3366'
+    }
+  ];
+
   return (
     <div
       style={{
@@ -33,15 +68,15 @@ export default function Slide05ImpactHydroSeal() {
           >
             <User size={14} color="#FF5500" />
             <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              PRESENTER 05 — DROP DEFLECTION & HYDRO-SEAL BARRIER
+              SLIDE 05 / PRESENTER 5 — PRODUCT USES & APPLICATIONS
             </span>
           </div>
 
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
-            Drop defense & water sealing.
+            Who uses TRI—SHIELD?
           </h1>
           <p style={{ marginTop: '6px', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.45 }}>
-            Thank you Presenter 4. Professor, next we look at mechanical safety: how our case protects phone glass from high drops and prevents water entry.
+            Thank you Presenter 4. Professor, our product serves four core user groups who face real environmental challenges every day.
           </p>
         </div>
 
@@ -57,99 +92,64 @@ export default function Slide05ImpactHydroSeal() {
           }}
         >
           <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', fontWeight: 700 }}>
-            SLIDE 05 OF 08
+            SLIDE 05 OF 07
           </div>
           <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
-            3.5m Drop Tested
+            Product Uses
           </div>
-          <div style={{ fontSize: '0.7rem', color: '#0088FF', marginTop: '2px' }}>
-            IP68 Gasket Rating
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', marginTop: '2px' }}>
+            Gamers, Trekkers & More
           </div>
         </div>
       </div>
 
-      {/* Main Dual Feature Cards Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', margin: 'auto 0', pointerEvents: 'auto' }}>
-        
-        {/* Card 1: 3.5m Impact Deflection */}
-        <div className="glass-panel-interactive" style={{ padding: '26px', background: 'rgba(12, 14, 20, 0.85)', borderColor: 'rgba(255, 85, 0, 0.25)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Activity size={20} color="#FF5500" />
-              </div>
-              <div>
-                <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
-                  Feature 1: 3.5m Drop Protection
+      {/* Grid of 4 Use Cases */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '18px',
+          margin: 'auto 0',
+          pointerEvents: 'auto'
+        }}
+      >
+        {uses.map((item, idx) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={idx}
+              className="glass-panel-interactive"
+              style={{
+                padding: '22px',
+                background: 'rgba(12, 14, 20, 0.85)',
+                borderColor: 'rgba(255, 255, 255, 0.08)',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
+                <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: `${item.color}15`, border: `1px solid ${item.color}30`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Icon size={18} color={item.color} />
                 </div>
-                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500' }}>
-                  32-CELL HONEYCOMB GRID
-                </div>
+                <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.62rem', color: item.color, fontWeight: 700, padding: '2px 6px', borderRadius: '4px', background: `${item.color}12` }}>
+                  {item.stat}
+                </span>
               </div>
-            </div>
-            <span style={{ fontSize: '0.68rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(255,85,0,0.15)', color: '#FF5500', fontWeight: 700 }}>
-              SHOCK ABSORBER
-            </span>
-          </div>
 
-          <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
-            When a phone hits the floor, drop energy causes glass rear panels to shatter. TRI—SHIELD uses 32 internal elastomer cells around the rim that bend and absorb shock before force reaches the phone.
-          </p>
-
-          <div style={{ display: 'flex', gap: '12px' }}>
-            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>MAX DROP RATING</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>3.5 Meters</div>
-            </div>
-            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>CELL MATERIAL</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FF5500' }}>TPE Rubber</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Card 2: IP68 Hydro Gasket */}
-        <div className="glass-panel-interactive" style={{ padding: '26px', background: 'rgba(12, 14, 20, 0.85)', borderColor: 'rgba(0, 136, 255, 0.25)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(0,136,255,0.15)', border: '1px solid rgba(0,136,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Droplets size={20} color="#0088FF" />
+              <div style={{ fontSize: '0.98rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '2px' }}>{item.title}</div>
+              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)', letterSpacing: '0.06em', marginBottom: '8px', fontFamily: "'Space Grotesk', monospace" }}>
+                {item.subtitle || item.tagline}
               </div>
-              <div>
-                <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
-                  Feature 2: Water & Dust Gasket
-                </div>
-                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#0088FF' }}>
-                  FLUOROSILICONE EDGE SEAL
-                </div>
-              </div>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
+                {item.desc}
+              </p>
             </div>
-            <span style={{ fontSize: '0.68rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(0,136,255,0.15)', color: '#0088FF', fontWeight: 700 }}>
-              MOISTURE SHIELD
-            </span>
-          </div>
-
-          <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
-            Water splashes and fine dust particles enter behind standard cases and scratch the glass. Our molded rubber gasket forms a tight seal around the phone back to keep out moisture completely.
-          </p>
-
-          <div style={{ display: 'flex', gap: '12px' }}>
-            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(0,136,255,0.08)', border: '1px solid rgba(0,136,255,0.2)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>WATERPROOF RATING</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>IP68 Edge Seal</div>
-            </div>
-            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(0,136,255,0.08)', border: '1px solid rgba(0,136,255,0.2)' }}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>COATING</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#0088FF' }}>Fingerprint-Proof</div>
-            </div>
-          </div>
-        </div>
-
+          );
+        })}
       </div>
 
-      {/* Bottom Speaker Hint */}
+      {/* Speaker Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        PRESENTER 5: EXPLAIN HONEYCOMB DROP ABSORPTION AND IP68 EDGE GASKET WATER RESISTANCE.
+        PRESENTER 5: EXPLAIN REAL-WORLD USES FOR GAMERS, OUTDOOR TREKKERS, TRAVELERS AND FIELD WORKERS.
       </div>
     </div>
   );

@@ -2,17 +2,16 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 
 const PresentationContext = createContext();
 
-export const SLIDE_COUNT = 8;
+export const SLIDE_COUNT = 7;
 
 export const SLIDE_NAMES = [
-  '01 / PRESENTER 1: BRAND OVERVIEW',
-  '02 / PRESENTER 2: THE PROBLEM',
-  '03 / PRESENTER 3: 3D LAYER ANATOMY',
-  '04 / PRESENTER 4: THERMAL COOLING',
-  '05 / PRESENTER 5: DROP & WATER SHIELD',
-  '06 / PRESENTER 6: TARGET USERS',
-  '07 / PRESENTER 7: FINANCIAL MODEL',
-  '08 / PRESENTER 8: CONCLUSION'
+  '01 / BRAND & INTRO',
+  '02 / THE MOTIVE & CAUSE',
+  '03 / 3D LAYER ANATOMY',
+  '04 / ULTRA-SLIM 3D PROFILE',
+  '05 / USES & APPLICATIONS',
+  '06 / PROFIT CALCULATOR',
+  '07 / CONCLUSION'
 ];
 
 export function PresentationProvider({ children }) {
@@ -22,7 +21,7 @@ export function PresentationProvider({ children }) {
   
   // Interactive slide states
   const [activeFeature, setActiveFeature] = useState(null);
-  const [hoveredLayer, setHoveredLayer] = useState(0); // Default focus on layer 0 for anatomy diagram
+  const [hoveredLayer, setHoveredLayer] = useState(0);
   
   // Mouse position for subtle 3D parallax (-1 to 1)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
