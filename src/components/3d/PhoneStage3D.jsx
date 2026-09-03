@@ -12,6 +12,11 @@ export default function PhoneStage3D() {
     reducedMotion
   } = usePresentation();
 
+  const currentSlideRef = useRef(currentSlide);
+  useEffect(() => {
+    currentSlideRef.current = currentSlide;
+  }, [currentSlide]);
+
   // Store 3D scene references
   const sceneRef = useRef(null);
   const cameraRef = useRef(null);
@@ -120,7 +125,7 @@ export default function PhoneStage3D() {
       bevelThickness: 0.03
     };
 
-    // Anatomy Distinct Layer Materials
+    // Anatomy Materials
     const outerBackShellMat = new THREE.MeshStandardMaterial({
       color: 0x1a1d26,
       metalness: 0.85,
@@ -173,7 +178,7 @@ export default function PhoneStage3D() {
       const mesh = new THREE.Mesh(layerGeo, materials[i].clone());
       mesh.position.z = (i - 2) * 0.07;
 
-      // Add REAR CAMERA ISLAND & LENSES on the Outer Back Cover (Layer 0)
+      // Add REAR CAMERA ISLAND & LENSES on Outer Back Cover (Layer 0)
       if (i === 0) {
         const camPlateGeo = new THREE.BoxGeometry(0.75, 0.85, 0.08);
         const camPlateMat = new THREE.MeshStandardMaterial({ color: 0x0c0d12, roughness: 0.1, metalness: 0.9 });
@@ -242,6 +247,11 @@ export default function PhoneStage3D() {
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
 
+      // Continuously spin target state on Slide 04 (index 3) to show 360 thickness
+      if (currentSlideRef.current === 3) {
+        targetStateRef.current.rotY += 0.012;
+      }
+
       const curr = currentStateRef.current;
       const targ = targetStateRef.current;
 
@@ -307,7 +317,7 @@ export default function PhoneStage3D() {
     };
   }, []);
 
-  // Update target states per slide for 8 slides
+  // Update target states per slide
   useEffect(() => {
     const targ = targetStateRef.current;
 
@@ -345,14 +355,13 @@ export default function PhoneStage3D() {
         targ.exploded = 1.0;
         break;
 
-      case 3: // 04 / ULTRA-SLIM 3D PROFILE (Continuous Rotate & Revolve)
-        targ.rotX = 0.15;
-        targ.rotY += 0.012; // Continuous revolution
-        targ.rotZ = 0.02;
+      case 3: // 04 / ULTRA-SLIM 3D PROFILE (Continuous 360 Revolution)
+        targ.rotX = 0.1;
+        targ.rotZ = 0;
         targ.posX = 0;
-        targ.posY = 0;
-        targ.posZ = 0.2;
-        targ.scale = 1.05;
+        targ.posY = 0.05;
+        targ.posZ = 0.3;
+        targ.scale = 1.08;
         targ.exploded = 0;
         break;
 
@@ -411,4 +420,3 @@ export default function PhoneStage3D() {
     />
   );
 }
-
