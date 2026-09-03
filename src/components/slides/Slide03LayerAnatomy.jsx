@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { usePresentation } from '../../context/PresentationContext';
-import { Cpu, Layers, ShieldCheck, Flame, Droplets } from 'lucide-react';
+import { Cpu, Layers, ShieldCheck, Flame, Droplets, Box as BoxIcon } from 'lucide-react';
 
 export default function Slide03LayerAnatomy() {
   const { hoveredLayer, setHoveredLayer } = usePresentation();
@@ -71,15 +71,27 @@ export default function Slide03LayerAnatomy() {
       }}
     >
       {/* Header */}
-      <div style={{ maxWidth: '560px' }}>
-        <div className="mono-tag" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#FF5500' }} />
-          <span>TECHNICAL ANATOMY DIAGRAM</span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div style={{ maxWidth: '560px' }}>
+          <div className="mono-tag" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#FF5500', boxShadow: '0 0 10px #FF5500' }} />
+            <span>TECHNICAL ANATOMY DIAGRAM</span>
+          </div>
+          <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
+            Material Composition & Uses.
+          </h1>
         </div>
-        <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
-          Material Composition & Uses.
-        </h1>
+
+        {/* 3D Exclusive Indicator */}
+        <div className="glass-panel" style={{ padding: '10px 18px', display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,85,0,0.12)', borderColor: 'rgba(255,85,0,0.3)', boxShadow: '0 0 20px rgba(255,85,0,0.2)', pointerEvents: 'auto' }}>
+          <BoxIcon size={16} color="#FF5500" />
+          <div>
+            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', fontWeight: 800, color: '#FFFFFF' }}>3D LAYER EXPLOSION</div>
+            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.62rem', color: '#FF5500' }}>INTERACTIVE CAD MODEL</div>
+          </div>
+        </div>
       </div>
+
 
       {/* Main Anatomy Breakdown Layout */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', pointerEvents: 'auto' }}>

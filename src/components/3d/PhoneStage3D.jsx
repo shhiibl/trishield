@@ -405,6 +405,8 @@ export default function PhoneStage3D() {
     }
   }, [currentSlide, activeFeature]);
 
+  if (currentSlide !== 2) return null;
+
   return (
     <div
       ref={canvasRef}
@@ -414,8 +416,9 @@ export default function PhoneStage3D() {
         width: '100%',
         height: '100%',
         zIndex: 1,
-        pointerEvents: currentSlide === 2 ? 'auto' : 'none'
+        pointerEvents: 'auto'
       }}
     />
   );
 }
+
