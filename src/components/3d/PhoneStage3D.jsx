@@ -51,8 +51,8 @@ export default function PhoneStage3D() {
     const container = canvasRef.current;
     if (!container) return;
 
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
 
     const scene = new THREE.Scene();
     sceneRef.current = scene;
@@ -78,14 +78,14 @@ export default function PhoneStage3D() {
     container.appendChild(renderer.domElement);
 
     // Studio Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
     scene.add(ambientLight);
 
-    const dirLight1 = new THREE.DirectionalLight(0xffffff, 1.4);
+    const dirLight1 = new THREE.DirectionalLight(0xffffff, 1.6);
     dirLight1.position.set(-5, 6, 6);
     scene.add(dirLight1);
 
-    const dirLight2 = new THREE.DirectionalLight(0xff5500, 0.6);
+    const dirLight2 = new THREE.DirectionalLight(0xff5500, 0.8);
     dirLight2.position.set(5, -3, 4);
     scene.add(dirLight2);
 
@@ -235,8 +235,8 @@ export default function PhoneStage3D() {
 
     const handleResize = () => {
       if (!container) return;
-      const w = container.clientWidth;
-      const h = container.clientHeight;
+      const w = container.clientWidth || window.innerWidth;
+      const h = container.clientHeight || window.innerHeight;
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
@@ -249,7 +249,7 @@ export default function PhoneStage3D() {
 
       // Continuously spin target state on Slide 04 (index 3) to show 360 thickness
       if (currentSlideRef.current === 3) {
-        targetStateRef.current.rotY += 0.012;
+        targetStateRef.current.rotY += 0.015;
       }
 
       const curr = currentStateRef.current;
@@ -359,9 +359,9 @@ export default function PhoneStage3D() {
         targ.rotX = 0.1;
         targ.rotZ = 0;
         targ.posX = 0;
-        targ.posY = 0.05;
-        targ.posZ = 0.3;
-        targ.scale = 1.08;
+        targ.posY = 0;
+        targ.posZ = 0.4;
+        targ.scale = 1.15;
         targ.exploded = 0;
         break;
 
@@ -403,8 +403,7 @@ export default function PhoneStage3D() {
     }
   }, [currentSlide, activeFeature]);
 
-  // Mount 3D canvas on Slide 3 (Layer Anatomy) and Slide 4 (Ultra-Slim 3D View)
-  if (currentSlide !== 2 && currentSlide !== 3) return null;
+  const isVisible = currentSlide === 2 || currentSlide === 3;
 
   return (
     <div
@@ -414,8 +413,11 @@ export default function PhoneStage3D() {
         inset: 0,
         width: '100%',
         height: '100%',
-        zIndex: 1,
-        pointerEvents: 'auto'
+        zIndex: isVisible ? 2 : -1,
+        opacity: isVisible ? 1 : 0,
+        visibility: isVisible ? 'visible' : 'hidden',
+        pointerEvents: isVisible ? 'auto' : 'none',
+        transition: 'opacity 300ms ease'
       }}
     />
   );
