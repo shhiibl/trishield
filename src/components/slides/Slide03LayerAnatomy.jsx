@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { usePresentation } from '../../context/PresentationContext';
-import { Cpu, Layers, ShieldCheck, Flame, Droplets, Box as BoxIcon } from 'lucide-react';
+import { Cpu, Layers, ShieldCheck, Flame, Droplets, User } from 'lucide-react';
 
 export default function Slide03LayerAnatomy() {
   const { hoveredLayer, setHoveredLayer } = usePresentation();
@@ -11,45 +11,40 @@ export default function Slide03LayerAnatomy() {
       id: 0,
       code: 'LAYER 01',
       name: 'Outer Armor Shell',
-      material: 'Aerospace-Grade Polycarbonate (PC) + TPU Outer Lip',
-      properties: 'Tensile Strength: 70 MPa | Impact Resistance: High | Oleophobic Coated',
-      uses: 'Primary structural shield that deflects sharp abrasive forces and resists UV yellowing.',
+      material: 'Clear Polycarbonate Shell',
+      simpleNote: 'Scratches & impact shield. Protects the case surface from UV yellowing and sharp scratches.',
       icon: Layers
     },
     {
       id: 1,
       code: 'LAYER 02',
       name: 'Dielectric Liquid Core',
-      material: 'High-Purity Fluorinert Dielectric Fluid (0.4mm Sealed Chamber)',
-      properties: 'Viscosity: 0.8 cSt | Thermal Cap: High | Non-Conductive / Stationary',
-      uses: 'Provides hydrostatic pressure distribution for drop impacts and acts as a thermal buffer.',
+      material: '0.4mm Sealed Cooling Fluid',
+      simpleNote: 'Thermal absorber. Absorbs sunlight and internal CPU heat, keeping phone temperature cool.',
       icon: Flame
     },
     {
       id: 2,
       code: 'LAYER 03',
       name: 'Elastomer Shock Matrix',
-      material: 'Thermoplastic Elastomer (TPE) Honeycomb Grid',
-      properties: 'Durometer: 70A | Elongation: 450% | Honeycomb Cell Lattice',
-      uses: 'Absorbs kinetic shock waves and distributes drop energy across 32 perimeter cells.',
+      material: '32-Cell Honeycomb Grid',
+      simpleNote: 'Drop cushion. 32 rubber cells flex during drops to absorb heavy forces away from glass.',
       icon: ShieldCheck
     },
     {
       id: 3,
       code: 'LAYER 04',
       name: 'Synthetic Graphite Spreader',
-      material: 'Pyrolytic Synthetic Graphite Sheet (99.9% Carbon)',
-      properties: 'Thermal Cond: 1500 W/m·K (in-plane) | Thickness: 0.05mm',
-      uses: 'Spreads concentrated CPU/battery heat laterally away from phone body to perimeter edges.',
+      material: 'Pyrolytic Graphite Sheet',
+      simpleNote: 'Heat spreader. Draws heat away from the hot processor and spreads it out to the edges.',
       icon: Cpu
     },
     {
       id: 4,
       code: 'LAYER 05',
-      name: 'Microfiber Lining & Gasket',
-      material: 'High-Density Microfiber + Fluorosilicone Perimeter Gasket',
-      properties: 'Thread Count: Ultra-fine | Water Resistance: IP68 Edge Barrier',
-      uses: 'Cushions phone rear glass against micro-abrasions and seals edges against dust and moisture.',
+      name: 'Microfiber & Hydro-Gasket',
+      material: 'IP68 Rubber Seal Lip',
+      simpleNote: 'Water & scratch seal. Soft interior lining prevents glass scratches while edge gasket blocks water.',
       icon: Droplets
     }
   ];
@@ -70,34 +65,58 @@ export default function Slide03LayerAnatomy() {
         zIndex: 10
       }}
     >
-      {/* Header */}
+      {/* Header with Speaker Badge */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div style={{ maxWidth: '560px' }}>
-          <div className="mono-tag" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#FF5500', boxShadow: '0 0 10px #FF5500' }} />
-            <span>TECHNICAL ANATOMY DIAGRAM</span>
+        <div style={{ maxWidth: '640px' }}>
+          <div
+            className="glass-panel"
+            style={{
+              marginBottom: '10px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 14px',
+              background: 'rgba(255, 85, 0, 0.12)',
+              borderColor: 'rgba(255, 85, 0, 0.3)',
+              pointerEvents: 'auto'
+            }}
+          >
+            <User size={14} color="#FF5500" />
+            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
+              PRESENTER 03 — PRODUCT DESIGN & 3D LAYER ANATOMY
+            </span>
           </div>
+
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
-            Material Composition & Uses.
+            5-Layer Composite Architecture.
           </h1>
         </div>
 
-        {/* 3D Exclusive Indicator */}
-        <div className="glass-panel" style={{ padding: '10px 18px', display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,85,0,0.12)', borderColor: 'rgba(255,85,0,0.3)', boxShadow: '0 0 20px rgba(255,85,0,0.2)', pointerEvents: 'auto' }}>
-          <BoxIcon size={16} color="#FF5500" />
-          <div>
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', fontWeight: 800, color: '#FFFFFF' }}>3D LAYER EXPLOSION</div>
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.62rem', color: '#FF5500' }}>INTERACTIVE CAD MODEL</div>
+        {/* Presenter Summary Card */}
+        <div
+          className="glass-panel"
+          style={{
+            padding: '12px 18px',
+            textAlign: 'right',
+            background: 'rgba(12, 14, 20, 0.9)',
+            borderColor: 'rgba(255, 85, 0, 0.3)',
+            pointerEvents: 'auto'
+          }}
+        >
+          <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', fontWeight: 700 }}>
+            SLIDE 03 OF 08
+          </div>
+          <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
+            3D Layer Diagram
           </div>
         </div>
       </div>
 
-
       {/* Main Anatomy Breakdown Layout */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', pointerEvents: 'auto' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pointerEvents: 'auto' }}>
         
         {/* Left Side: 5 Layer Selector Buttons */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '310px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '290px' }}>
           {layersData.map((layer) => {
             const isSelected = activeIndex === layer.id;
             return (
@@ -107,7 +126,7 @@ export default function Slide03LayerAnatomy() {
                 onClick={() => setHoveredLayer(layer.id)}
                 className="glass-panel-interactive"
                 style={{
-                  padding: '14px 18px',
+                  padding: '12px 16px',
                   cursor: 'pointer',
                   borderColor: isSelected ? '#FF5500' : 'var(--border-subtle)',
                   backgroundColor: isSelected ? 'rgba(255, 85, 0, 0.18)' : 'var(--bg-card)',
@@ -115,21 +134,14 @@ export default function Slide03LayerAnatomy() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  transition: 'all 250ms ease'
+                  transition: 'all 200ms ease'
                 }}
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: isSelected ? '#FF5500' : 'var(--text-dim)', fontWeight: 600 }}>
-                      {layer.code}
-                    </span>
-                    {isSelected && (
-                      <span style={{ fontSize: '0.65rem', padding: '1px 6px', borderRadius: '4px', background: '#FF5500', color: '#FFF', fontWeight: 700 }}>
-                        ACTIVE
-                      </span>
-                    )}
+                  <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: isSelected ? '#FF5500' : 'var(--text-dim)', fontWeight: 600 }}>
+                    {layer.code}
                   </div>
-                  <div style={{ fontSize: '0.92rem', fontWeight: 600, color: '#FFFFFF', marginTop: '2px' }}>
+                  <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#FFFFFF', marginTop: '1px' }}>
                     {layer.name}
                   </div>
                 </div>
@@ -144,20 +156,20 @@ export default function Slide03LayerAnatomy() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.4 }}
           className="glass-panel"
           style={{
             flex: 1,
-            margin: '0 24px',
-            height: '380px',
+            margin: '0 20px',
+            height: '360px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             overflow: 'hidden',
             position: 'relative',
-            background: 'radial-gradient(circle at center, rgba(255, 85, 0, 0.1) 0%, rgba(8, 10, 15, 0.9) 75%)',
+            background: 'radial-gradient(circle at center, rgba(255, 85, 0, 0.12) 0%, rgba(8, 10, 15, 0.9) 75%)',
             borderColor: 'rgba(255, 85, 0, 0.3)',
-            boxShadow: '0 0 40px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255,85,0,0.15)'
+            boxShadow: '0 0 35px rgba(0, 0, 0, 0.7)'
           }}
         >
           <img
@@ -167,7 +179,7 @@ export default function Slide03LayerAnatomy() {
               width: '100%',
               height: '100%',
               objectFit: 'contain',
-              padding: '12px',
+              padding: '10px',
               filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.8))'
             }}
           />
@@ -176,12 +188,12 @@ export default function Slide03LayerAnatomy() {
           <div
             style={{
               position: 'absolute',
-              bottom: '12px',
-              left: '16px',
-              right: '16px',
-              padding: '8px 14px',
+              bottom: '10px',
+              left: '14px',
+              right: '14px',
+              padding: '6px 12px',
               borderRadius: '8px',
-              background: 'rgba(10, 12, 18, 0.88)',
+              background: 'rgba(10, 12, 18, 0.9)',
               border: '1px solid rgba(255, 85, 0, 0.3)',
               display: 'flex',
               alignItems: 'center',
@@ -190,87 +202,68 @@ export default function Slide03LayerAnatomy() {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#FF5500', boxShadow: '0 0 8px #FF5500' }} />
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: '#FFFFFF', fontWeight: 700 }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#FF5500' }} />
+              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FFFFFF', fontWeight: 700 }}>
                 {activeData.code}: {activeData.name.toUpperCase()}
               </span>
             </div>
-            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500', fontWeight: 700 }}>
-              EXPLODED CAD VIEW
+            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.62rem', color: '#FF5500', fontWeight: 700 }}>
+              3D CAD EXPLOSION
             </span>
           </div>
         </motion.div>
 
-
         {/* Right Side: Detailed Anatomy Callout Card */}
         <motion.div
           key={activeData.id}
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 15 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}
           className="glass-panel"
           style={{
-            width: '430px',
-            padding: '24px',
+            width: '360px',
+            padding: '20px',
             borderColor: 'rgba(255, 85, 0, 0.4)',
-            background: 'rgba(12, 14, 20, 0.92)',
-            boxShadow: '0 0 30px rgba(0, 0, 0, 0.5)'
+            background: 'rgba(12, 14, 20, 0.92)'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <activeData.icon size={20} color="#FF5500" />
-              </div>
-              <div>
-                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: '#FF5500', letterSpacing: '0.1em' }}>
-                  {activeData.code} ANATOMY SPECS
-                </div>
-                <div style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF' }}>
-                  {activeData.name}
-                </div>
-              </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+            <div style={{ width: '34px', height: '34px', borderRadius: '8px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <activeData.icon size={18} color="#FF5500" />
             </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 10px', borderRadius: '12px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)' }}>
-              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500', fontWeight: 700 }}>
-                CONNECTED LAYER
-              </span>
+            <div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500', letterSpacing: '0.08em' }}>
+                {activeData.code} SPECS
+              </div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
+                {activeData.name}
+              </div>
             </div>
           </div>
 
-          <div style={{ marginBottom: '14px', paddingTop: '10px', borderTop: '1px solid var(--border-subtle)' }}>
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: 'var(--text-dim)', textTransform: 'uppercase', marginBottom: '4px' }}>
-              MATERIAL COMPOSITION
+          <div style={{ marginBottom: '10px', paddingTop: '8px', borderTop: '1px solid var(--border-subtle)' }}>
+            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: 'var(--text-dim)', textTransform: 'uppercase', marginBottom: '2px' }}>
+              MATERIAL USED
             </div>
-            <div style={{ fontSize: '0.88rem', color: '#FFFFFF', fontWeight: 500, lineHeight: 1.4 }}>
+            <div style={{ fontSize: '0.84rem', color: '#FFFFFF', fontWeight: 600 }}>
               {activeData.material}
             </div>
           </div>
 
-          <div style={{ marginBottom: '14px' }}>
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: 'var(--text-dim)', textTransform: 'uppercase', marginBottom: '4px' }}>
-              PHYSICAL PROPERTIES
-            </div>
-            <div style={{ fontSize: '0.8rem', color: '#FF5500', fontFamily: "'Space Grotesk', monospace", fontWeight: 600 }}>
-              {activeData.properties}
-            </div>
-          </div>
-
           <div>
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: 'var(--text-dim)', textTransform: 'uppercase', marginBottom: '4px' }}>
-              ENGINEERING USES & FUNCTION
+            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: 'var(--text-dim)', textTransform: 'uppercase', marginBottom: '2px' }}>
+              HOW IT WORKS (SIMPLE SUMMARY)
             </div>
-            <div style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
-              {activeData.uses}
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
+              {activeData.simpleNote}
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom Hint */}
+      {/* Bottom Speaker Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        SELECT OR HOVER OVER ANY MATERIAL LAYER ON THE LEFT TO INSPECT ANATOMY SPECS
+        PRESENTER 3: HOVER OR CLICK ON ANY LAYER BUTTON TO EXPLAIN ITS FUNCTION TO PROFESSOR.
       </div>
     </div>
   );

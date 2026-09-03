@@ -1,32 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { usePresentation } from '../../context/PresentationContext';
-import { Eye, Flame, ShieldCheck, Cpu, ArrowRight } from 'lucide-react';
+import { User, Flame, ShieldAlert, Droplets, ArrowRight } from 'lucide-react';
 
 export default function Slide02ProductReveal() {
-  const { activeFeature, setActiveFeature } = usePresentation();
-
-  const features = [
+  const problems = [
     {
-      id: 'liquid',
-      icon: Eye,
-      title: 'Full-Back Liquid Chamber',
-      tagline: '0.4mm Dielectric Fluid Boundary',
-      desc: 'Transparent fluid core sealed across the entire back panel. Maintains hydrostatic equilibrium and remains completely invisible to the user.'
-    },
-    {
-      id: 'thermal',
       icon: Flame,
-      title: 'Thermal Dissipation Buffer',
-      tagline: 'Graphite + Liquid Heat Barrier',
-      desc: 'Combines pyrolytic graphite lateral spreading with a high-capacitance fluid layer to absorb junction heat and isolate battery cells.'
+      color: '#FF5500',
+      title: 'Problem 1: Phone Overheating',
+      simpleNote: 'Heavy gaming, direct sunlight, and charging trap heat inside traditional plastic cases. This slows down the processor and damages battery life long-term.'
     },
     {
-      id: 'impact',
-      icon: ShieldCheck,
-      title: 'Elastomer Impact Grid',
-      tagline: '32-Cell Kinetic Deflection Lattice',
-      desc: 'High-durometer TPE perimeter matrix channels drop energy around phone edges, protecting fragile back glass from cracking.'
+      icon: ShieldAlert,
+      color: '#FFAA00',
+      title: 'Problem 2: Fragile Rear Glass',
+      simpleNote: 'Modern smartphones have glass backs. Standard slim cases fail to absorb drop energy, causing the back glass to crack easily on hard concrete.'
+    },
+    {
+      icon: Droplets,
+      color: '#0088FF',
+      title: 'Problem 3: Moisture & Dust Wear',
+      simpleNote: 'Dust and liquid fine droplets get trapped around case edges, slowly corroding internal ports and destroying rubber phone seals.'
     }
   ];
 
@@ -43,29 +37,60 @@ export default function Slide02ProductReveal() {
         zIndex: 10
       }}
     >
-      {/* Header */}
+      {/* Header with Speaker Badge */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div style={{ maxWidth: '600px' }}>
-          <div className="mono-tag" style={{ marginBottom: '12px' }}>PRODUCT DISCOVERY</div>
+        <div style={{ maxWidth: '640px' }}>
+          <div
+            className="glass-panel"
+            style={{
+              marginBottom: '12px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 14px',
+              background: 'rgba(255, 85, 0, 0.12)',
+              borderColor: 'rgba(255, 85, 0, 0.3)',
+              pointerEvents: 'auto'
+            }}
+          >
+            <User size={14} color="#FF5500" />
+            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
+              PRESENTER 02 — THE PROBLEM & MARKET CHALLENGE
+            </span>
+          </div>
+
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
-            Meet <span style={{ color: '#FF5500' }}>TRI—SHIELD.</span>
+            Why standard phone cases fail.
           </h1>
           <p style={{ marginTop: '8px', color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.5 }}>
-            A precision-molded protective back cover engineered with an invisible liquid thermal core and 5-layer composite defense.
+            Thank you Presenter 1. Professor, everyday phone users face three major hardware risks that standard plastic covers cannot fix.
           </p>
         </div>
 
-        {/* Luxury Badge */}
-        <div className="glass-panel" style={{ padding: '12px 20px', display: 'flex', alignItems: 'center', gap: '12px', background: 'rgba(255,85,0,0.08)', borderColor: 'rgba(255,85,0,0.25)' }}>
-          <Cpu size={18} color="#FF5500" />
-          <div>
-            <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#FFFFFF' }}>INVIS-CORE ENGINE</div>
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500' }}>PATENT PENDING</div>
+        {/* Presenter Card */}
+        <div
+          className="glass-panel"
+          style={{
+            padding: '16px 20px',
+            textAlign: 'right',
+            background: 'rgba(12, 14, 20, 0.9)',
+            borderColor: 'rgba(255, 85, 0, 0.3)',
+            pointerEvents: 'auto'
+          }}
+        >
+          <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', fontWeight: 700 }}>
+            SLIDE 02 OF 08
+          </div>
+          <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
+            The Problem
+          </div>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '2px' }}>
+            Heat, Drops & Moisture Risks
           </div>
         </div>
       </div>
 
-      {/* Center Luxury Feature Cards Grid */}
+      {/* 3 Problem Cards */}
       <div
         style={{
           display: 'grid',
@@ -75,58 +100,43 @@ export default function Slide02ProductReveal() {
           pointerEvents: 'auto'
         }}
       >
-        {features.map((feat) => {
-          const Icon = feat.icon;
-          const isSelected = activeFeature === feat.id;
+        {problems.map((prob, idx) => {
+          const Icon = prob.icon;
           return (
             <div
-              key={feat.id}
-              onClick={() => setActiveFeature(isSelected ? null : feat.id)}
+              key={idx}
               className="glass-panel-interactive"
               style={{
-                padding: '28px',
-                cursor: 'pointer',
-                borderColor: isSelected ? '#FF5500' : 'rgba(255, 255, 255, 0.08)',
-                backgroundColor: isSelected ? 'rgba(255, 85, 0, 0.12)' : 'rgba(12, 14, 20, 0.85)',
-                boxShadow: isSelected ? '0 0 30px rgba(255, 85, 0, 0.3)' : '0 10px 30px rgba(0, 0, 0, 0.4)',
-                transition: 'all 300ms ease'
+                padding: '24px',
+                background: 'rgba(12, 14, 20, 0.85)',
+                borderColor: 'rgba(255, 255, 255, 0.08)',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: isSelected ? '#FF5500' : 'rgba(255,255,255,0.05)', border: `1px solid ${isSelected ? '#FF5500' : 'rgba(255,255,255,0.1)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon size={22} color={isSelected ? '#FFFFFF' : '#FF5500'} />
-                </div>
-                {isSelected && (
-                  <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', padding: '3px 8px', borderRadius: '4px', background: '#FF5500', color: '#FFF', fontWeight: 700 }}>
-                    FOCUS ACTIVE
-                  </span>
-                )}
+              <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: `${prob.color}15`, border: `1px solid ${prob.color}35`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                <Icon size={20} color={prob.color} />
               </div>
 
-              <div style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '4px' }}>
-                {feat.title}
-              </div>
-
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', marginBottom: '12px' }}>
-                {feat.tagline}
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
+                {prob.title}
               </div>
 
               <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                {feat.desc}
+                {prob.simpleNote}
               </p>
             </div>
           );
         })}
       </div>
 
-      {/* Footer hint */}
+      {/* Speaker Footer */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-          CLICK ANY FEATURE CARD TO HIGHLIGHT SPECIFIC HARDWARE INNOVATION
+        <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: 'var(--text-dim)' }}>
+          KEY TAKEAWAY: TRADITIONAL CASES INSULATE HEAT & LACK HYDRAULIC DROP DEFLECTION.
         </div>
-        <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <span>NEXT: LAYER ANATOMY (3D VIEW)</span>
-          <ArrowRight size={12} />
+        <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', color: '#FF5500', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <span>NEXT: PRESENTER 03 (3D LAYER ANATOMY)</span>
+          <ArrowRight size={14} />
         </div>
       </div>
     </div>

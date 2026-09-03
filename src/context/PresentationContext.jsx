@@ -5,14 +5,14 @@ const PresentationContext = createContext();
 export const SLIDE_COUNT = 8;
 
 export const SLIDE_NAMES = [
-  '01 / BRAND & USP',
-  '02 / PRODUCT REVEAL',
-  '03 / LAYER ANATOMY',
-  '04 / THERMAL DYNAMICS',
-  '05 / IMPACT & HYDRO-SEAL',
-  '06 / APPLICATION',
-  '07 / FINANCIAL MODEL',
-  '08 / REVEAL SUMMARY'
+  '01 / PRESENTER 1: BRAND OVERVIEW',
+  '02 / PRESENTER 2: THE PROBLEM',
+  '03 / PRESENTER 3: 3D LAYER ANATOMY',
+  '04 / PRESENTER 4: THERMAL COOLING',
+  '05 / PRESENTER 5: DROP & WATER SHIELD',
+  '06 / PRESENTER 6: TARGET USERS',
+  '07 / PRESENTER 7: FINANCIAL MODEL',
+  '08 / PRESENTER 8: CONCLUSION'
 ];
 
 export function PresentationProvider({ children }) {

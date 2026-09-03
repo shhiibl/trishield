@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Flame, Droplets, Zap, ArrowDown, Sparkles } from 'lucide-react';
+import { Shield, Flame, Droplets, Zap, ArrowDown, User } from 'lucide-react';
 import { usePresentation } from '../../context/PresentationContext';
 
 export default function Slide01Problem() {
@@ -10,26 +10,23 @@ export default function Slide01Problem() {
     {
       icon: Flame,
       color: '#FF5500',
-      uspNum: 'USP 01',
-      title: 'Dielectric Liquid Thermal Core',
-      metric: '0.4mm Sealed Chamber',
-      desc: 'Stationary fluid core acts as a high-capacitance thermal buffer that absorbs CPU junction heat and insulates against direct sun radiation.'
+      tag: 'FEATURE 01',
+      title: 'Liquid Cooling Chamber',
+      simpleNote: 'Sealed liquid core absorbs phone heat and sunlight radiation.'
     },
     {
       icon: Zap,
       color: '#FFAA00',
-      uspNum: 'USP 02',
-      title: '3.5m Kinetic Shock Lattice',
-      metric: '32-Cell Honeycomb Grid',
-      desc: 'High-durometer TPE elastomer matrix channels corner impact shockwaves laterally away from fragile device rear glass.'
+      tag: 'FEATURE 02',
+      title: '3.5m Drop Protection',
+      simpleNote: '32 rubber honeycomb cells absorb and deflect impact force.'
     },
     {
       icon: Droplets,
       color: '#0088FF',
-      uspNum: 'USP 03',
-      title: 'Fluorosilicone Hydro-Gasket',
-      metric: 'IP68 Edge Barrier',
-      desc: 'Precision perimeter sealing lip keeps fine dust, water splashes, and high environmental humidity from reaching device internals.'
+      tag: 'FEATURE 03',
+      title: 'Water & Dust Gasket',
+      simpleNote: 'Precision edge seal protects rear glass against water and dust.'
     }
   ];
 
@@ -46,77 +43,73 @@ export default function Slide01Problem() {
         zIndex: 10
       }}
     >
-      {/* Brand Hero Header & Tagline */}
+      {/* Header with Speaker Badge */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ maxWidth: '720px' }}>
           <div
-            className="mono-tag"
+            className="glass-panel"
             style={{
-              marginBottom: '14px',
+              marginBottom: '12px',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              padding: '4px 12px',
-              borderRadius: '12px',
-              background: 'rgba(255, 85, 0, 0.08)',
-              border: '1px solid rgba(255, 85, 0, 0.2)'
+              padding: '6px 14px',
+              background: 'rgba(255, 85, 0, 0.12)',
+              borderColor: 'rgba(255, 85, 0, 0.3)',
+              pointerEvents: 'auto'
             }}
           >
-            <Sparkles size={12} color="#FF5500" />
-            <span>ADVANCED HARDWARE DEFENSE</span>
+            <User size={14} color="#FF5500" />
+            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
+              PRESENTER 01 — BRAND OVERVIEW & UNIQUE VALUE
+            </span>
           </div>
 
-          {/* Brand Name */}
           <h1
             style={{
-              fontSize: 'clamp(3rem, 6.5vw, 4.8rem)',
+              fontSize: 'clamp(2.8rem, 6vw, 4.2rem)',
               fontWeight: 800,
               color: '#FFFFFF',
               letterSpacing: '-0.02em',
-              lineHeight: 1.0,
-              margin: '0 0 12px 0'
+              lineHeight: 1.05,
+              margin: '0 0 10px 0'
             }}
           >
             TRI—SHIELD
           </h1>
 
-          {/* Brand Tagline & Primary USP */}
-          <div style={{ fontSize: '1.25rem', fontWeight: 600, color: '#FF5500', marginBottom: '8px', letterSpacing: '-0.01em' }}>
-            Invisible Technology. Absolute Protection.
+          <div style={{ fontSize: '1.2rem', fontWeight: 600, color: '#FF5500', marginBottom: '6px' }}>
+            The World's First Liquid-Cooled Smart Phone Case
           </div>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: 1.5, maxWidth: '620px' }}>
-            The world's first luxury phone back cover engineered with a sealed liquid thermal chamber, pyrolytic graphite spreader, and 3.5m kinetic impact matrix.
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.5, maxWidth: '640px' }}>
+            Good morning Professor. Our product, <strong>TRI—SHIELD</strong>, combines liquid thermal cooling, drop impact absorption, and water sealing into one single slim protective case.
           </p>
         </div>
 
-        {/* Brand Specs Badge */}
+        {/* Presenter Summary Card */}
         <div
           className="glass-panel"
           style={{
-            padding: '16px 24px',
+            padding: '16px 20px',
             textAlign: 'right',
-            background: 'rgba(12, 14, 20, 0.85)',
+            background: 'rgba(12, 14, 20, 0.9)',
             borderColor: 'rgba(255, 85, 0, 0.3)',
-            boxShadow: '0 0 25px rgba(255,85,0,0.15)',
             pointerEvents: 'auto'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'flex-end', marginBottom: '4px' }}>
-            <Shield size={16} color="#FF5500" />
-            <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.9rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.1em' }}>
-              TRI—SHIELD
-            </span>
+          <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', fontWeight: 700 }}>
+            SLIDE 01 OF 08
           </div>
-          <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: '#FF5500', fontWeight: 700 }}>
-            3-IN-1 PROTECTION MATRIX
+          <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
+            Introduction
           </div>
-          <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: 'var(--text-dim)', marginTop: '2px' }}>
-            PATENT PENDING HARDWARE
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '2px' }}>
+            Brand & Core Features
           </div>
         </div>
       </div>
 
-      {/* 3 Core USP Cards Grid */}
+      {/* 3 Core Feature Cards */}
       <div
         style={{
           display: 'grid',
@@ -133,54 +126,37 @@ export default function Slide01Problem() {
               key={idx}
               className="glass-panel-interactive"
               style={{
-                padding: '26px',
+                padding: '24px',
                 background: 'rgba(12, 14, 20, 0.85)',
                 borderColor: 'rgba(255, 255, 255, 0.08)',
                 boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: `${usp.color}15`, border: `1px solid ${usp.color}35`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: `${usp.color}15`, border: `1px solid ${usp.color}35`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Icon size={20} color={usp.color} />
                 </div>
-                <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: usp.color, fontWeight: 700, padding: '3px 8px', borderRadius: '4px', background: `${usp.color}12`, border: `1px solid ${usp.color}30` }}>
-                  {usp.uspNum}
+                <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: usp.color, fontWeight: 700, padding: '3px 8px', borderRadius: '4px', background: `${usp.color}12` }}>
+                  {usp.tag}
                 </span>
               </div>
 
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '4px' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '6px' }}>
                 {usp.title}
               </div>
 
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: '#FF5500', marginBottom: '10px', fontWeight: 600 }}>
-                {usp.metric}
-              </div>
-
-              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                {usp.desc}
+              <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
+                {usp.simpleNote}
               </p>
             </div>
           );
         })}
       </div>
 
-      {/* Footer Navigation Bar */}
+      {/* Speaker Footer */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div
-          className="glass-panel"
-          style={{
-            padding: '10px 24px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '20px',
-            background: 'rgba(10, 11, 15, 0.9)'
-          }}
-        >
-          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.78rem', color: '#FF5500', letterSpacing: '0.15em', fontWeight: 700 }}>LIQUID THERMAL</span>
-          <span style={{ color: 'var(--text-dim)' }}>/</span>
-          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.78rem', color: '#FFFFFF', letterSpacing: '0.15em', fontWeight: 700 }}>3.5M DROP GRID</span>
-          <span style={{ color: 'var(--text-dim)' }}>/</span>
-          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.78rem', color: '#0088FF', letterSpacing: '0.15em', fontWeight: 700 }}>IP68 GASKET</span>
+        <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: 'var(--text-dim)' }}>
+          KEY TAKEAWAY: TRI-SHIELD SOLVES OVERHEATING, DROPS, AND WATER DAMAGE IN ONE PRODUCT.
         </div>
 
         <div
@@ -197,7 +173,7 @@ export default function Slide01Problem() {
             fontWeight: 700
           }}
         >
-          <span>EXPLORE PRODUCT DISCOVERY</span>
+          <span>NEXT: PRESENTER 02 (THE PROBLEM)</span>
           <ArrowDown size={14} />
         </div>
       </div>

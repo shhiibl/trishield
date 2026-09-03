@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Cpu, ShieldAlert, ArrowRightLeft, Sparkles, Thermometer } from 'lucide-react';
+import { Flame, Cpu, ShieldAlert, Thermometer, User } from 'lucide-react';
 
 export default function Slide04ThermalDynamics() {
   return (
@@ -15,112 +15,141 @@ export default function Slide04ThermalDynamics() {
         zIndex: 10
       }}
     >
-      {/* Header */}
+      {/* Header with Speaker Badge */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div style={{ maxWidth: '640px' }}>
-          <div className="mono-tag" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Flame size={14} color="#FF5500" />
-            <span>THERMAL DYNAMICS & HEAT MANAGEMENT</span>
+        <div style={{ maxWidth: '660px' }}>
+          <div
+            className="glass-panel"
+            style={{
+              marginBottom: '10px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 14px',
+              background: 'rgba(255, 85, 0, 0.12)',
+              borderColor: 'rgba(255, 85, 0, 0.3)',
+              pointerEvents: 'auto'
+            }}
+          >
+            <User size={14} color="#FF5500" />
+            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
+              PRESENTER 04 — THERMAL COOLING & HEAT MANAGEMENT
+            </span>
           </div>
+
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
-            Dual-path thermal protection.
+            Dual-path thermal cooling.
           </h1>
-          <p style={{ marginTop: '8px', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.45 }}>
-            Resists external ambient heat radiation while rapidly drawing away intense internal CPU junction heat.
+          <p style={{ marginTop: '6px', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.45 }}>
+            Thank you Presenter 3. Professor, our case manages heat in two smart ways: drawing heat out from inside the phone while blocking sun heat from outside.
           </p>
         </div>
 
-        <div className="glass-panel" style={{ padding: '12px 20px', display: 'flex', alignItems: 'center', gap: '12px', background: 'rgba(255,85,0,0.08)' }}>
-          <Thermometer size={20} color="#FF5500" />
-          <div>
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.85rem', fontWeight: 700, color: '#FFFFFF' }}>–12°C PEAK TEMP</div>
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: 'var(--text-dim)' }}>CPU JUNCTION DELTA</div>
+        {/* Presenter Summary Card */}
+        <div
+          className="glass-panel"
+          style={{
+            padding: '12px 18px',
+            textAlign: 'right',
+            background: 'rgba(12, 14, 20, 0.9)',
+            borderColor: 'rgba(255, 85, 0, 0.3)',
+            pointerEvents: 'auto'
+          }}
+        >
+          <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: '#FF5500', fontWeight: 700 }}>
+            SLIDE 04 OF 08
+          </div>
+          <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF', marginTop: '2px' }}>
+            –12°C Temp Drop
+          </div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)', marginTop: '2px' }}>
+            CPU Junction Delta
           </div>
         </div>
       </div>
 
       {/* Main Dual-Path Comparison Cards Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '28px', margin: 'auto 0', pointerEvents: 'auto' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', margin: 'auto 0', pointerEvents: 'auto' }}>
         
-        {/* Pathway A: Internal Heat Dissipation */}
-        <div className="glass-panel-interactive" style={{ padding: '28px', background: 'rgba(12, 14, 20, 0.85)', borderColor: 'rgba(255, 85, 0, 0.25)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+        {/* Pathway A: Internal Heat Spreading */}
+        <div className="glass-panel-interactive" style={{ padding: '26px', background: 'rgba(12, 14, 20, 0.85)', borderColor: 'rgba(255, 85, 0, 0.25)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(255,85,0,0.15)', border: '1px solid rgba(255,85,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Cpu size={20} color="#FF5500" />
               </div>
               <div>
                 <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
-                  INTERNAL HEAT DISSIPATION
+                  Path 1: Internal CPU Cooling
                 </div>
-                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: '#FF5500' }}>
-                  PATHWAY 01 — ACTIVE GRAPHITE MATRIX
+                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500' }}>
+                  GRAPHITE HEAT SPREADER
                 </div>
               </div>
             </div>
-            <span style={{ fontSize: '0.7rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(255,85,0,0.15)', color: '#FF5500', fontWeight: 700 }}>
-              IN-PLANE SPREAD
+            <span style={{ fontSize: '0.68rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(255,85,0,0.15)', color: '#FF5500', fontWeight: 700 }}>
+              SINK INTERNAL HEAT
             </span>
           </div>
 
-          <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '20px' }}>
-            A 99.9% pure pyrolytic synthetic graphite layer draws localized processor hot spots away from battery cells and spreads thermal energy laterally across case perimeter rails.
+          <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
+            When playing games or processing heavy apps, the internal processor gets hot. The synthetic graphite sheet pulls heat off the processor and spreads it across the outer frame so the phone never slows down.
           </p>
 
           <div style={{ display: 'flex', gap: '12px' }}>
-            <div style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
-              <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)', letterSpacing: '0.08em' }}>THERMAL CONDUCTIVITY</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>1,500 W/m·K</div>
+            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
+              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>HEAT SPREAD RATE</div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>1,500 W/m·K</div>
             </div>
-            <div style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
-              <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)', letterSpacing: '0.08em' }}>PERFORMANCE EFFECT</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.05rem', fontWeight: 700, color: '#FF5500' }}>Zero Throttle</div>
+            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(255,85,0,0.08)', border: '1px solid rgba(255,85,0,0.2)' }}>
+              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>RESULT</div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FF5500' }}>Zero Lag / Throttling</div>
             </div>
           </div>
         </div>
 
-        {/* Pathway B: External Thermal Isolation */}
-        <div className="glass-panel-interactive" style={{ padding: '28px', background: 'rgba(12, 14, 20, 0.85)', borderColor: 'rgba(0, 136, 255, 0.25)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+        {/* Pathway B: External Sun Radiation Insulation */}
+        <div className="glass-panel-interactive" style={{ padding: '26px', background: 'rgba(12, 14, 20, 0.85)', borderColor: 'rgba(0, 136, 255, 0.25)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(0,136,255,0.15)', border: '1px solid rgba(0,136,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(0,136,255,0.15)', border: '1px solid rgba(0,136,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <ShieldAlert size={20} color="#0088FF" />
               </div>
               <div>
                 <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>
-                  EXTERNAL THERMAL BARRIER
+                  Path 2: Sunlight Heat Shield
                 </div>
-                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: '#0088FF' }}>
-                  PATHWAY 02 — LIQUID CHAMBER BUFFER
+                <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#0088FF' }}>
+                  SEALED LIQUID CORE BUFFER
                 </div>
               </div>
             </div>
-            <span style={{ fontSize: '0.7rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(0,136,255,0.15)', color: '#0088FF', fontWeight: 700 }}>
-              FLUID SHIELD
+            <span style={{ fontSize: '0.68rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(0,136,255,0.15)', color: '#0088FF', fontWeight: 700 }}>
+              BLOCK SUNLIGHT HEAT
             </span>
           </div>
 
-          <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '20px' }}>
-            The stationary dielectric fluid core acts as a high-capacitance thermal cushion, significantly delaying direct sunlight and ambient environmental heat from warming the phone body.
+          <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
+            When left outside in direct sunlight, standard phones overheat quickly. The liquid fluid layer acts as a heat buffer, absorbing solar energy before it can warm up the phone battery.
           </p>
 
           <div style={{ display: 'flex', gap: '12px' }}>
-            <div style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', background: 'rgba(0,136,255,0.08)', border: '1px solid rgba(0,136,255,0.2)' }}>
-              <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)', letterSpacing: '0.08em' }}>SUN RADIANT TOLERANCE</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF' }}>Up to +55°C</div>
+            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(0,136,255,0.08)', border: '1px solid rgba(0,136,255,0.2)' }}>
+              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>SUN HEAT TOLERANCE</div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>Up to +55°C</div>
             </div>
-            <div style={{ flex: 1, padding: '10px 14px', borderRadius: '8px', background: 'rgba(0,136,255,0.08)', border: '1px solid rgba(0,136,255,0.2)' }}>
-              <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)', letterSpacing: '0.08em' }}>FLUID VISCOSITY</div>
-              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1.05rem', fontWeight: 700, color: '#0088FF' }}>0.8 cSt Sealed</div>
+            <div style={{ flex: 1, padding: '10px 12px', borderRadius: '8px', background: 'rgba(0,136,255,0.08)', border: '1px solid rgba(0,136,255,0.2)' }}>
+              <div style={{ fontSize: '0.62rem', color: 'var(--text-dim)' }}>LIQUID TYPE</div>
+              <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '1rem', fontWeight: 700, color: '#0088FF' }}>Non-Conductive Fluid</div>
             </div>
           </div>
         </div>
 
       </div>
 
-      {/* Bottom Hint */}
+      {/* Bottom Speaker Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        THERMAL FLOW ARCHITECTURE — SYNTHETIC GRAPHITE CONDUCTIVITY & DIELECTRIC ABSORPTION
+        PRESENTER 4: EXPLAIN HOW GRAPHITE HANDLES INTERNAL CPU HEAT & LIQUID CORE BLOCKS OUTDOOR SUN HEAT.
       </div>
     </div>
   );

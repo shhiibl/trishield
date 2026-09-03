@@ -1,14 +1,14 @@
 import React from 'react';
-import { Shield, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Shield, Sparkles, CheckCircle2, ArrowRight, User } from 'lucide-react';
 import { usePresentation } from '../../context/PresentationContext';
 
 export default function Slide08FinalHero() {
   const { goToSlide } = usePresentation();
 
   const summaryHighlights = [
-    { label: 'Thermal Core', val: 'Dielectric Fluid' },
-    { label: 'Spreader Layer', val: '99.9% Graphite' },
-    { label: 'Drop Rating', val: '3.5m Absorption' },
+    { label: 'Thermal Core', val: 'Dielectric Liquid' },
+    { label: 'Heat Spreader', val: 'Synthetic Graphite' },
+    { label: 'Drop Rating', val: '3.5m Impact Grid' },
     { label: 'Moisture Barrier', val: 'IP68 Hydro-Seal' }
   ];
 
@@ -17,7 +17,7 @@ export default function Slide08FinalHero() {
       style={{
         position: 'absolute',
         inset: 0,
-        padding: '90px 60px 50px 60px',
+        padding: '90px 60px 40px 60px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -27,42 +27,44 @@ export default function Slide08FinalHero() {
         zIndex: 10
       }}
     >
-      {/* Top Tag */}
-      <div style={{ maxWidth: '640px' }}>
+      {/* Speaker Badge & Title */}
+      <div style={{ maxWidth: '680px' }}>
         <div
-          className="mono-tag"
+          className="glass-panel"
           style={{
-            marginBottom: '14px',
+            marginBottom: '10px',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            padding: '4px 14px',
-            borderRadius: '12px',
-            background: 'rgba(255, 85, 0, 0.08)',
-            border: '1px solid rgba(255, 85, 0, 0.2)'
+            padding: '6px 14px',
+            background: 'rgba(255, 85, 0, 0.12)',
+            borderColor: 'rgba(255, 85, 0, 0.3)',
+            pointerEvents: 'auto'
           }}
         >
-          <Sparkles size={12} color="#FF5500" />
-          <span>HARDWARE ARCHITECTURE SUMMARY</span>
+          <User size={14} color="#FF5500" />
+          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
+            PRESENTER 08 — CONCLUSION & FINAL SUMMARY
+          </span>
         </div>
 
-        <h1 style={{ fontSize: 'clamp(2.8rem, 6vw, 4.5rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.05 }}>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.05 }}>
           TRI—SHIELD
         </h1>
 
-        <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', marginTop: '12px' }}>
-          Invisible technology. <span style={{ color: '#FF5500', fontWeight: 600 }}>Visible protection.</span>
+        <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
+          Thank you Professor. In conclusion, <strong>TRI—SHIELD</strong> delivers next-generation liquid cooling and 3-in-1 hardware defense.
         </p>
       </div>
 
-      {/* Luxury Specs Cards Bar */}
+      {/* Luxury Specs Summary Cards Grid */}
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
           gap: '16px',
-          width: '80%',
-          maxWidth: '850px',
+          width: '85%',
+          maxWidth: '880px',
           pointerEvents: 'auto'
         }}
       >
@@ -73,57 +75,55 @@ export default function Slide08FinalHero() {
             style={{
               padding: '16px',
               background: 'rgba(12, 14, 20, 0.85)',
-              borderColor: 'rgba(255, 85, 0, 0.2)'
+              borderColor: 'rgba(255, 85, 0, 0.25)'
             }}
           >
-            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', color: 'var(--text-dim)', marginBottom: '4px' }}>
+            <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: 'var(--text-dim)', marginBottom: '4px' }}>
               {item.label}
             </div>
-            <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#FFFFFF' }}>
+            <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#FFFFFF' }}>
               {item.val}
             </div>
           </div>
         ))}
       </div>
 
-      {/* CTA Button & Prototype Badge */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', pointerEvents: 'auto' }}>
+      {/* CTA Button & Conclusion Badge */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px', pointerEvents: 'auto' }}>
         <button
           onClick={() => goToSlide(2)}
           style={{
-            padding: '14px 32px',
+            padding: '12px 28px',
             borderRadius: '30px',
             background: 'linear-gradient(135deg, #FF5500 0%, #CC4400 100%)',
             border: 'none',
             color: '#FFFFFF',
             fontFamily: "'Space Grotesk', monospace",
-            fontSize: '0.85rem',
+            fontSize: '0.82rem',
             fontWeight: 700,
-            letterSpacing: '0.1em',
+            letterSpacing: '0.08em',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             gap: '10px',
             boxShadow: '0 0 25px rgba(255, 85, 0, 0.5)',
-            transition: 'transform 200ms ease, box-shadow 200ms ease'
+            transition: 'transform 200ms ease'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'scale(1.05)';
-            e.currentTarget.style.boxShadow = '0 0 35px rgba(255, 85, 0, 0.8)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.boxShadow = '0 0 25px rgba(255, 85, 0, 0.5)';
           }}
         >
-          <span>RE-INSPECT 3D LAYER ANATOMY</span>
+          <span>RE-VISIT 3D LAYER ANATOMY</span>
           <ArrowRight size={16} />
         </button>
 
         <div className="glass-panel" style={{ padding: '6px 18px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <CheckCircle2 size={12} color="#0088FF" />
-          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.68rem', letterSpacing: '0.12em', color: 'var(--text-secondary)' }}>
-            PATENT-PENDING HYDRAULIC LIQUID CORE ENGINEERING
+          <CheckCircle2 size={14} color="#0088FF" />
+          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
+            TEAM PRESENTATION COMPLETE — READY FOR PROFESSOR Q&A
           </span>
         </div>
       </div>
