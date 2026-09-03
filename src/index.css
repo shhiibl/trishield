@@ -1,0 +1,118 @@
+:root {
+  --bg-primary: #08080a;
+  --bg-secondary: #0f1015;
+  --bg-card: rgba(18, 19, 24, 0.6);
+  --bg-card-hover: rgba(26, 28, 36, 0.7);
+  
+  --accent-orange: #ff5500;
+  --accent-orange-subtle: rgba(255, 85, 0, 0.15);
+  
+  --text-primary: #f0f2f5;
+  --text-secondary: #8a909e;
+  --text-dim: #525663;
+  
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-active: rgba(255, 85, 0, 0.4);
+  
+  --font-heading: 'Outfit', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  
+  --ease-minimal: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-transition: 400ms;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  user-select: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Minimal Panel Styling */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.glass-panel-interactive {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: border-color 300ms var(--ease-minimal), background-color 300ms var(--ease-minimal);
+}
+
+.glass-panel-interactive:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-active);
+}
+
+/* Typography styles */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.headline-large {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--accent-orange);
+}
+
+/* Clean line mask reveal */
+.mask-text-wrapper {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.mask-text-content {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 500ms var(--ease-minimal);
+}
+
+.mask-text-wrapper.visible .mask-text-content {
+  transform: translateY(0%);
+}
+
+/* Reduced motion settings */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
