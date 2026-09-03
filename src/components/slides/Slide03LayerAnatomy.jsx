@@ -97,7 +97,7 @@ export default function Slide03LayerAnatomy() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', pointerEvents: 'auto' }}>
         
         {/* Left Side: 5 Layer Selector Buttons */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '340px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '310px' }}>
           {layersData.map((layer) => {
             const isSelected = activeIndex === layer.id;
             return (
@@ -139,6 +139,68 @@ export default function Slide03LayerAnatomy() {
             );
           })}
         </div>
+
+        {/* Center: High-Resolution 3D Exploded Layer Picture */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="glass-panel"
+          style={{
+            flex: 1,
+            margin: '0 24px',
+            height: '380px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            position: 'relative',
+            background: 'radial-gradient(circle at center, rgba(255, 85, 0, 0.1) 0%, rgba(8, 10, 15, 0.9) 75%)',
+            borderColor: 'rgba(255, 85, 0, 0.3)',
+            boxShadow: '0 0 40px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255,85,0,0.15)'
+          }}
+        >
+          <img
+            src="/3d-layer-exploded.png"
+            alt="TRI-SHIELD 3D Layer Exploded View"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              padding: '12px',
+              filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.8))'
+            }}
+          />
+
+          {/* Active Layer Tag Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '12px',
+              left: '16px',
+              right: '16px',
+              padding: '8px 14px',
+              borderRadius: '8px',
+              background: 'rgba(10, 12, 18, 0.88)',
+              border: '1px solid rgba(255, 85, 0, 0.3)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              backdropFilter: 'blur(10px)'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#FF5500', boxShadow: '0 0 8px #FF5500' }} />
+              <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: '#FFFFFF', fontWeight: 700 }}>
+                {activeData.code}: {activeData.name.toUpperCase()}
+              </span>
+            </div>
+            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.65rem', color: '#FF5500', fontWeight: 700 }}>
+              EXPLODED CAD VIEW
+            </span>
+          </div>
+        </motion.div>
+
 
         {/* Right Side: Detailed Anatomy Callout Card */}
         <motion.div
