@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, ArrowDown, User, Sparkles } from 'lucide-react';
+import { Sparkles, ArrowDown } from 'lucide-react';
 import { usePresentation } from '../../context/PresentationContext';
 
 export default function Slide01Problem() {
@@ -19,28 +19,9 @@ export default function Slide01Problem() {
         zIndex: 10
       }}
     >
-      {/* Top Header with Speaker Badge */}
+      {/* Top Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ maxWidth: '640px' }}>
-          <div
-            className="glass-panel"
-            style={{
-              marginBottom: '12px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(255, 85, 0, 0.12)',
-              borderColor: 'rgba(255, 85, 0, 0.3)',
-              pointerEvents: 'auto'
-            }}
-          >
-            <User size={14} color="#FF5500" />
-            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              SLIDE 01 / PRESENTER 1 — BRAND NAME & INTRODUCTION
-            </span>
-          </div>
-
           <h1
             style={{
               fontSize: 'clamp(3rem, 6.5vw, 4.8rem)',
@@ -59,11 +40,11 @@ export default function Slide01Problem() {
           </div>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: 1.5, maxWidth: '580px' }}>
-            Good morning Professor. We are presenting <strong>TRI—SHIELD</strong>: an advanced hardware phone case designed with a sealed liquid thermal chamber, kinetic shock matrix, and waterproof edge gasket.
+            Introducing <strong>TRI—SHIELD</strong>: an advanced hardware phone case designed with a sealed liquid thermal chamber, kinetic shock matrix, and waterproof edge gasket.
           </p>
         </div>
 
-        {/* Presenter Slide Tracker */}
+        {/* Slide Tracker */}
         <div
           className="glass-panel"
           style={{
@@ -185,7 +166,7 @@ export default function Slide01Problem() {
             <rect x="4" y="124" width="4" height="24" rx="2" fill="#FF5500" />
             <rect x="192" y="105" width="4" height="36" rx="2" fill="#FF5500" />
 
-            {/* Subtle Center Brand Outline Stamp */}
+            {/* Center Brand Outline Stamp */}
             <path
               d="M 100 190 L 115 205 L 100 220 L 85 205 Z"
               fill="none"
@@ -226,7 +207,7 @@ export default function Slide01Problem() {
       {/* Footer Navigation */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: 'var(--text-dim)' }}>
-          PRESENTER 1: INTRODUCE THE BRAND NAME & MINIMAL OUTLINE GEOMETRY TO PROFESSOR.
+          BRAND OVERVIEW & MINIMAL OUTLINE GEOMETRY
         </div>
 
         <div

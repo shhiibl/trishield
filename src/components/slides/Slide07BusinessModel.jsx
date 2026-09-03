@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Sparkles, CheckCircle2, ArrowRight, User } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { usePresentation } from '../../context/PresentationContext';
 
 export default function Slide07BusinessModel() {
@@ -27,33 +27,18 @@ export default function Slide07BusinessModel() {
         zIndex: 10
       }}
     >
-      {/* Speaker Badge & Title */}
+      {/* Title */}
       <div style={{ maxWidth: '680px' }}>
-        <div
-          className="glass-panel"
-          style={{
-            marginBottom: '10px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 14px',
-            background: 'rgba(255, 85, 0, 0.12)',
-            borderColor: 'rgba(255, 85, 0, 0.3)',
-            pointerEvents: 'auto'
-          }}
-        >
-          <User size={14} color="#FF5500" />
-          <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-            SLIDE 07 / PRESENTER 7 — CONCLUSION & SUMMARY
-          </span>
-        </div>
-
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', lineHeight: 1.05 }}>
           TRI—SHIELD
         </h1>
 
-        <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
-          Thank you Professor. In conclusion, <strong>TRI—SHIELD</strong> combines liquid thermal cooling, drop impact absorption, and water sealing into an ultra-thin 1.2mm case.
+        <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', marginTop: '12px' }}>
+          Thank you.
+        </p>
+
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-dim)', marginTop: '6px' }}>
+          <strong>TRI—SHIELD</strong> combines liquid thermal cooling, drop impact absorption, and water sealing into an ultra-thin 1.2mm case.
         </p>
       </div>
 
@@ -123,7 +108,7 @@ export default function Slide07BusinessModel() {
         <div className="glass-panel" style={{ padding: '6px 18px', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <CheckCircle2 size={14} color="#0088FF" />
           <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
-            PRESENTATION COMPLETE — READY FOR PROFESSOR QUESTIONS
+            PRESENTATION COMPLETE
           </span>
         </div>
       </div>

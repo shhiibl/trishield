@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, Flame, ShieldAlert, Droplets, ArrowRight } from 'lucide-react';
+import { Flame, ShieldAlert, Droplets, ArrowRight } from 'lucide-react';
 
 export default function Slide02ProductReveal() {
   const motives = [
@@ -40,37 +40,18 @@ export default function Slide02ProductReveal() {
         zIndex: 10
       }}
     >
-      {/* Header with Speaker Badge */}
+      {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ maxWidth: '660px' }}>
-          <div
-            className="glass-panel"
-            style={{
-              marginBottom: '12px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(255, 85, 0, 0.12)',
-              borderColor: 'rgba(255, 85, 0, 0.3)',
-              pointerEvents: 'auto'
-            }}
-          >
-            <User size={14} color="#FF5500" />
-            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              SLIDE 02 / PRESENTER 2 — THE MOTIVE & CAUSE
-            </span>
-          </div>
-
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
             Why we created TRI—SHIELD.
           </h1>
           <p style={{ marginTop: '6px', color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.5 }}>
-            Thank you Presenter 1. Professor, our motivation was simple: existing phone cases only protect against light scratches, but ignore overheating, drop glass shatters, and moisture penetration.
+            Existing phone cases only protect against light scratches, but ignore overheating, drop glass shatters, and moisture penetration.
           </p>
         </div>
 
-        {/* Presenter Summary Card */}
+        {/* Slide Summary Card */}
         <div
           className="glass-panel"
           style={{
@@ -137,7 +118,7 @@ export default function Slide02ProductReveal() {
       {/* Footer Navigation */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.72rem', color: 'var(--text-dim)' }}>
-          PRESENTER 2: EXPLAIN THE 3 CORE MOTIVES THAT DROVE OUR HARDWARE PRODUCT INNOVATION.
+          THE 3 CORE MOTIVES DRIVING OUR HARDWARE INNOVATION
         </div>
         <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', color: '#FF5500', display: 'flex', alignItems: 'center', gap: '6px' }}>
           <span>NEXT: SLIDE 03 (3D LAYER ANATOMY)</span>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sliders, PieChart, User } from 'lucide-react';
+import { Sliders, PieChart } from 'lucide-react';
 
 export default function Slide06UseCases() {
   const [units, setUnits] = useState(25000);
@@ -37,37 +37,18 @@ export default function Slide06UseCases() {
         zIndex: 10
       }}
     >
-      {/* Header with Speaker Badge */}
+      {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ maxWidth: '640px' }}>
-          <div
-            className="glass-panel"
-            style={{
-              marginBottom: '10px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(255, 85, 0, 0.12)',
-              borderColor: 'rgba(255, 85, 0, 0.3)',
-              pointerEvents: 'auto'
-            }}
-          >
-            <User size={14} color="#FF5500" />
-            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              SLIDE 06 / PRESENTER 6 — COST & PROFIT GENERATOR DRAG METER
-            </span>
-          </div>
-
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
             Interactive Profit Generator.
           </h1>
           <p style={{ marginTop: '4px', color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: 1.4 }}>
-            Thank you Presenter 5. Professor, here is our business model. Drag the slider to test sales volume and calculate net profit live!
+            Our business model: drag the slider to test sales volume and calculate net profit live.
           </p>
         </div>
 
-        {/* Speaker Card */}
+        {/* Slide Summary Card */}
         <div
           className="glass-panel"
           style={{
@@ -165,7 +146,7 @@ export default function Slide06UseCases() {
                     transition: 'all 200ms ease'
                   }}
                 >
-                  {preset >= 100000 ? `${preset / 100000}L` : `${preset / 100}K`}
+                  {preset >= 100000 ? `${preset / 100000}L` : `${preset / 1000}K`}
                 </button>
               ))}
             </div>
@@ -298,9 +279,9 @@ export default function Slide06UseCases() {
         </div>
       </div>
 
-      {/* Speaker Footer Hint */}
+      {/* Footer Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        PRESENTER 6: SHOW THE DRAG METER SLIDER TO PROFESSOR TO DEMONSTRATE PROFIT GROWTH.
+        DRAG THE METER SLIDER TO TEST SALES VOLUME & CALCULATE NET PROFIT IN REAL TIME.
       </div>
     </div>
   );

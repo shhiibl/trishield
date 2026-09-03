@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gamepad2, Compass, Plane, HardHat, User } from 'lucide-react';
+import { Gamepad2, Compass, Plane, HardHat } from 'lucide-react';
 
 export default function Slide05ImpactHydroSeal() {
   const uses = [
@@ -50,37 +50,18 @@ export default function Slide05ImpactHydroSeal() {
         zIndex: 10
       }}
     >
-      {/* Header with Speaker Badge */}
+      {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ maxWidth: '660px' }}>
-          <div
-            className="glass-panel"
-            style={{
-              marginBottom: '10px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(255, 85, 0, 0.12)',
-              borderColor: 'rgba(255, 85, 0, 0.3)',
-              pointerEvents: 'auto'
-            }}
-          >
-            <User size={14} color="#FF5500" />
-            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              SLIDE 05 / PRESENTER 5 — PRODUCT USES & APPLICATIONS
-            </span>
-          </div>
-
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
             Who uses TRI—SHIELD?
           </h1>
           <p style={{ marginTop: '6px', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.45 }}>
-            Thank you Presenter 4. Professor, our product serves four core user groups who face real environmental challenges every day.
+            Our product serves four core user groups who face real environmental challenges every day.
           </p>
         </div>
 
-        {/* Presenter Summary Card */}
+        {/* Slide Summary Card */}
         <div
           className="glass-panel"
           style={{
@@ -147,9 +128,9 @@ export default function Slide05ImpactHydroSeal() {
         })}
       </div>
 
-      {/* Speaker Hint */}
+      {/* Footer Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        PRESENTER 5: EXPLAIN REAL-WORLD USES FOR GAMERS, OUTDOOR TREKKERS, TRAVELERS AND FIELD WORKERS.
+        REAL-WORLD USES FOR GAMERS, OUTDOOR TREKKERS, TRAVELERS AND FIELD WORKERS.
       </div>
     </div>
   );

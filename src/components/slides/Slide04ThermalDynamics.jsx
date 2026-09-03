@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Feather, Ruler, RotateCw, CheckCircle, Shield } from 'lucide-react';
+import { Feather, Ruler, RotateCw, CheckCircle } from 'lucide-react';
 
 export default function Slide04ThermalDynamics() {
   return (
@@ -15,37 +15,18 @@ export default function Slide04ThermalDynamics() {
         zIndex: 10
       }}
     >
-      {/* Header with Speaker Badge */}
+      {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ maxWidth: '680px' }}>
-          <div
-            className="glass-panel"
-            style={{
-              marginBottom: '10px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(255, 85, 0, 0.12)',
-              borderColor: 'rgba(255, 85, 0, 0.3)',
-              pointerEvents: 'auto'
-            }}
-          >
-            <User size={14} color="#FF5500" />
-            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              SLIDE 04 / PRESENTER 4 — ULTRA-SLIM 1.2mm PROFILE & 3D REVOLUTION
-            </span>
-          </div>
-
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
             "Is the case bulky?" — No. Only 1.2mm Thin!
           </h1>
           <p style={{ marginTop: '6px', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.45 }}>
-            Thank you Presenter 3. Professor, many people assume a liquid-cooled 5-layer case will be heavy or bulky. As you can see in our live revolving 3D model, TRI—SHIELD maintains an ultra-slim 1.2mm profile.
+            Despite having a liquid-cooled 5-layer system, TRI—SHIELD maintains an ultra-slim 1.2mm profile, as demonstrated in our revolving 3D model.
           </p>
         </div>
 
-        {/* Presenter Summary Card */}
+        {/* Slide Summary Card */}
         <div
           className="glass-panel"
           style={{
@@ -151,9 +132,9 @@ export default function Slide04ThermalDynamics() {
 
       </div>
 
-      {/* Speaker Footer Hint */}
+      {/* Footer Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        PRESENTER 4: POINT TO THE REVOLVING 3D MODEL & PROVE TO PROFESSOR THAT THE CASE IS ULTRA-SLIM (1.2mm).
+        ULTRA-SLIM (1.2mm) FEATHERWEIGHT PROFILE WITH 360° CONTINUOUS REVOLUTION.
       </div>
     </div>
   );

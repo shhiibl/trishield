@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { usePresentation } from '../../context/PresentationContext';
-import { Cpu, Layers, ShieldCheck, Flame, Droplets, User } from 'lucide-react';
+import { Cpu, Layers, ShieldCheck, Flame, Droplets } from 'lucide-react';
 
 export default function Slide03LayerAnatomy() {
   const { hoveredLayer, setHoveredLayer } = usePresentation();
@@ -65,34 +65,15 @@ export default function Slide03LayerAnatomy() {
         zIndex: 10
       }}
     >
-      {/* Header with Speaker Badge */}
+      {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ maxWidth: '640px' }}>
-          <div
-            className="glass-panel"
-            style={{
-              marginBottom: '10px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(255, 85, 0, 0.12)',
-              borderColor: 'rgba(255, 85, 0, 0.3)',
-              pointerEvents: 'auto'
-            }}
-          >
-            <User size={14} color="#FF5500" />
-            <span style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.75rem', fontWeight: 800, color: '#FFFFFF' }}>
-              SLIDE 03 / PRESENTER 3 — PRODUCT INFO & 3D LAYER ANATOMY
-            </span>
-          </div>
-
           <h1 className="headline-large" style={{ color: '#FFFFFF', fontWeight: 600 }}>
             5-Layer Composite Architecture.
           </h1>
         </div>
 
-        {/* Presenter Summary Card */}
+        {/* Slide Summary Card */}
         <div
           className="glass-panel"
           style={{
@@ -261,9 +242,9 @@ export default function Slide03LayerAnatomy() {
         </motion.div>
       </div>
 
-      {/* Bottom Speaker Hint */}
+      {/* Footer Hint */}
       <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '0.7rem', color: 'var(--text-dim)' }}>
-        PRESENTER 3: EXPLAIN THE 3D LAYER PICTURE AND COMPOSITE HARDWARE MATERIALS TO PROFESSOR.
+        HOVER OR CLICK ON ANY LAYER BUTTON TO INSPECT COMPOSITE HARDWARE MATERIALS.
       </div>
     </div>
   );
